@@ -79,7 +79,6 @@ nota_final(resultado)
 # EJERCICIO GRUPAL
 
 # Parte 2 de python
-# falta 8, 9, 13, 14 y 15
 # EJERCICIO 1 (condicionales)
 str = input("Ingrese una palabra o una frase: ")
 cap = str.capitalize() #sino puedo usar str.isupper[0]
@@ -148,6 +147,11 @@ print(lista_num)
 #  print(list.append(lista_num, numero)) 
 
 # EJERCICIO 8 (listas)
+Lista1 = [int(input("ingrese 5 numeros, uno por linea: ")), int(input()), int(input()), int(input()), int(input())]
+Lista2 = [int(input("ingrese 5 numeros nuevamente: ")), int(input()), int(input()), int(input()), int(input())]
+Lista3 = [Lista1[0]+Lista2[0], Lista1[1]+Lista2[1], Lista1[2]+Lista2[2], Lista1[3]+Lista2[3], Lista1[4]+Lista2[4]]
+print(Lista3)
+
 # EJERCICIO 9 (listas)
 # EJERCICIO 10 (diccionarios)
 contadores = {} 
