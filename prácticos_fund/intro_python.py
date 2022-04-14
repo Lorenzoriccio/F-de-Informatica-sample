@@ -153,6 +153,20 @@ Lista3 = [Lista1[0]+Lista2[0], Lista1[1]+Lista2[1], Lista1[2]+Lista2[2], Lista1[
 print(Lista3)
 
 # EJERCICIO 9 (listas)
+lista_nombre = []
+lista_edad = []
+nombre = input('ingrese el nombre del alumno: ')
+edad = input('ingrese la edad del alumno: ')
+while nombre != "*":
+    lista_nombre.append(nombre)   
+    lista_edad.append(edad)
+    nombre = input('ingrese el nombre del alumno: ')
+    if nombre == "*":
+        continue
+    edad = input('ingrese la edad del alumno: ')
+print("la edad máxima de los alumnos es: " + max(lista_edad))
+dic = {"lista_nombre" : "lista_edad"} 
+
 # EJERCICIO 10 (diccionarios)
 contadores = {} 
 cadena = input("Escribí una cadena de caracteres: ") 
@@ -181,7 +195,6 @@ for campo, valor in contadores.items():
   print (campo, valor)
 
 # EJERCICIO 12 (diccionarios)
-
 cantidad = int(input("Introducir cantidad de alumnos: "))
 alumnos = {} 
 
@@ -198,8 +211,19 @@ for alumno in alumnos:
   print(alumno, sum(alumnos[alumno]) / len(alumnos[alumno])) 
 
 # EJERCICIO 13 (funciones)
-socios_activos = {1: ["Florencia Ocampo", "14092001", True], 2: ["David Estévez", "14092001", True], 3: ["Sofía Cáceres", "14092001", True]}
+n1 = int(input('Ingrese un número: '))
+n2 = int(input('Ingrese el otro número: '))
+
+def esMultiplo(n1, n2): 
+  if (n1%n2) == 0: 
+    print(str(n1) + ' es múltiplo de ' + str(n2)) 
+  if (n2%n1) == 0: 
+    print(str(n2) + ' es múltipo de ' + str(n1))
+  else: 
+    print('Los números que ingresaste no son múltiplos entre sí')
 
 # EJERCICIO 14 (funciones)
 # EJERCICIO 15 (funciones)
+socios_activos = {1: ["Florencia Ocampo", "14092001", True], 2: ["David Estévez", "14092001", True], 3: ["Sofía Cáceres", "14092001", True]}
 
+len(socios_activos) #Informar la cantidad de socios que tiene el club.
