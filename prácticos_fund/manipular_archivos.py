@@ -1,8 +1,15 @@
 # Práctica de manipulación de archivos 
 # EJERCICIO 1
 # EJERCICIO 2
+with open('nombreArchivo', 'r') as file: 
+    print(file.readline())
+
 # EJERCICIO 3
 # EJERCICIO 4
+with open('nombreArchivo', 'r') as file: 
+    fileContent = file.readlines()
+    print(len(fileContent)) 
+    
 # EJERCICIO 5
 # EJERCICIO 6 (en clase)
 # EJERCICIO 7 (en clase)
