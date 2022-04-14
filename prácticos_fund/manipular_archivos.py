@@ -1,9 +1,10 @@
 # Práctica de manipulación de archivos 
+# EJERCICIO 1
+# EJERCICIO 2
+# EJERCICIO 3
+# EJERCICIO 4
+# EJERCICIO 5
 # EJERCICIO 6 (en clase)
-import glob 
-lista_txt = glob.glob('*.text')
-
-
 # EJERCICIO 7 (en clase)
 def palabra_mas_larga(archivo): 
     palabra = '' 
@@ -13,6 +14,7 @@ def palabra_mas_larga(archivo):
         for word in lista_palabra:
             if len(word) > max_long: 
                 max_long = len(word)
+    print(max_long) 
 
 # EJERCICIO 9 (en clase)
 def word_counter(archivo): 
