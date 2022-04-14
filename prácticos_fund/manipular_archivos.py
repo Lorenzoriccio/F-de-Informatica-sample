@@ -9,7 +9,7 @@ with open('nombreArchivo', 'r') as file:
 with open('nombreArchivo', 'r') as file: 
     fileContent = file.readlines()
     print(len(fileContent)) 
-    
+
 # EJERCICIO 5
 # EJERCICIO 6 (en clase)
 # EJERCICIO 7 (en clase)
