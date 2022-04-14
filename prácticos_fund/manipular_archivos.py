@@ -17,6 +17,10 @@ with open('nombreArchivo', 'r') as file:
 for fileline in fileContent: 
     fileline = fileline.replace('w', 'w \n')
 
+with open('otroArchivo', 'a') as f: 
+    for i in fileContent:
+        f.write(i) 
+
 # EJERCICIO 6 (en clase)
 # EJERCICIO 7 (en clase)
 def palabra_mas_larga(archivo): 
