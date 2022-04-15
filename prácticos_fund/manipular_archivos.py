@@ -48,7 +48,6 @@ def palabra_mas_larga(archivo):
     print(max_long) 
 
 # EJERCICIO 8    
-
 # EJERCICIO 9 (en clase)
 def word_counter(archivo): 
     frecuencias = dict() 
