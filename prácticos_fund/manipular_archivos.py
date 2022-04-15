@@ -1,10 +1,26 @@
 # Práctica de manipulación de archivos 
 # EJERCICIO 1
+with open('nombreArchivo', 'r') as file: 
+    fileContent = file.readlines()
+
+for fileline in fileContent: 
+    noEmpiezaCon = 0 
+    if not str.startswith(fileline, 'P'): 
+        noEmpiezaCon += 1
+    print(noEmpiezaCon) 
+
 # EJERCICIO 2
 with open('nombreArchivo', 'r') as file: 
     print(file.readline())
 
 # EJERCICIO 3
+'''with open('nombreArchivo', 'r') as file: 
+    contentList = [] 
+    list.append(contentList, file.readlines())  
+
+def imprimir_hasta_n(nombre, n):
+    print(contentList[::-1, n]) ''' #preguntar cómo hacerlo
+
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 
     fileContent = file.readlines()
