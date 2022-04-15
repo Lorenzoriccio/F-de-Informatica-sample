@@ -15,11 +15,9 @@ with open('nombreArchivo', 'r') as file:
 
 # EJERCICIO 3
 '''with open('nombreArchivo', 'r') as file: 
-    contentList = [] 
-    list.append(contentList, file.readlines())  
-    print(contentList[::-1]) ''' 
-    #preguntar cómo hacer para imprimir las n últimas {n}??
-    #se puede hacer poniendo vos el valor de n?? como print(contentList[3:])
+    contentList = file.readlines() 
+    for i in range(len(contentList) - n), len(contentList): 
+        print(contentList[i]) ''' #-n me aparece como no definido :,(
 
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 
