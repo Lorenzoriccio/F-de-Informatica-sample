@@ -1,5 +1,5 @@
 # Práctica de manipulación de archivos 
-# EJERCICIO 1
+# EJERCICIO 1 
 with open('nombreArchivo', 'r') as file: 
     fileContent = file.readlines()
 
@@ -17,7 +17,7 @@ with open('nombreArchivo', 'r') as file:
 '''with open('nombreArchivo', 'r') as file: 
     contentList = [] 
     list.append(contentList, file.readlines())  
-    print(contentList[::-1]) ''' #preguntar cómo hacer para imprimir las n últimas {n}??
+    print(contentList[::-1]) ''' #preguntar cómo hacer para imprimir las n últimas {n}?? 
 
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 
@@ -46,6 +46,8 @@ def palabra_mas_larga(archivo):
             if len(word) > max_long: 
                 max_long = len(word)
     print(max_long) 
+
+# EJERCICIO 8    
 
 # EJERCICIO 9 (en clase)
 def word_counter(archivo): 
