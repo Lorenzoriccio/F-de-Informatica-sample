@@ -17,9 +17,7 @@ with open('nombreArchivo', 'r') as file:
 '''with open('nombreArchivo', 'r') as file: 
     contentList = [] 
     list.append(contentList, file.readlines())  
-
-def imprimir_hasta_n(nombre, n):
-    print(contentList[::-1, n]) ''' #preguntar cómo hacerlo
+    print(contentList[::-1]) ''' #preguntar cómo hacer para imprimir las n últimas {n}??
 
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 
