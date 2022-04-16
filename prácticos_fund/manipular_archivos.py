@@ -10,8 +10,10 @@ for fileline in fileContent:
     print(noEmpiezaCon) 
 
 # EJERCICIO 2
-with open('nombreArchivo', 'r') as file: 
-    print(file.readline())
+'''with open('nombreArchivo', 'r') as file: 
+    contentList = file.readlines() 
+    for i in range(len(contentList) + n), len(contentList)):
+        print(contentList[i]) ''' #se podría hacer range(len(contentList), n)??
 
 # EJERCICIO 3
 '''with open('nombreArchivo', 'r') as file: 
@@ -23,8 +25,8 @@ with open('nombreArchivo', 'r') as file:
     texto = open(archivo, "r").readlines()
     for i in range((len(texto) -n), len(texto)):
         print(texto[i])
-    texto.close()''' # msj de guille: GRACIASS
-                     # definir la n que aparece como no definida
+    texto.close()''' #msj de guille: GRACIASS
+                     #definí la n que aparece como no definida
 
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 

@@ -16,4 +16,13 @@ patron = '\w' + '_' + '\w'
 re.search(patron, string) 
 
 # EJERICIO 5
-import re
+# EJERICIO 6
+# EJERICIO 7
+# EJERICIO 8
+# EJERICIO 9
+# EJERICIO 10
+# EJERICIO 11
+# EJERICIO 12
+# EJERICIO 13
+# EJERICIO 14
+# EJERICIO 15
