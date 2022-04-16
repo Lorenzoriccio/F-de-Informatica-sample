@@ -130,7 +130,7 @@ else:
 
 # EJERCICIO 6 (listas)
 lista = [input(), input(), input(), input(), input()]
-lista_invertida = [lista[4], lista[3], lista[2], lista[1], lista[0]] #chequear por qué no se puede lista[-1]
+lista_invertida = [lista[4], lista[3], lista[2], lista[1], lista[0]]
 print(lista_invertida)
 ''' sino también lo puedo hacer con strings inventados?: 
 lista = ['pan', 'queso', 'aprobar', 'quedar', 'cansado'] 
