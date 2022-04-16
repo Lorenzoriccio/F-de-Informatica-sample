@@ -19,6 +19,13 @@ with open('nombreArchivo', 'r') as file:
     for i in range(len(contentList) - n), len(contentList): 
         print(contentList[i]) ''' #-n me aparece como no definido :,(
 
+'''def read_n_back_lines(n, archivo): 
+    texto = open(archivo, "r").readlines()
+    for i in range((len(texto) -n), len(texto)):
+        print(texto[i])
+    texto.close()''' # msj de guille: GRACIASS
+                     # definir la n que aparece como no definida
+
 # EJERCICIO 4
 with open('nombreArchivo', 'r') as file: 
     fileContent = file.readlines()
