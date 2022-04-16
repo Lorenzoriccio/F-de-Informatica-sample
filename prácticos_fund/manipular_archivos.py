@@ -12,7 +12,7 @@ for fileline in fileContent:
 # EJERCICIO 2
 '''with open('nombreArchivo', 'r') as file: 
     contentList = file.readlines() 
-    for i in range(len(contentList) + n), len(contentList)):
+    for i in range(len(contentList) + n), len(contentList):
         print(contentList[i]) ''' #se podría hacer range(len(contentList), n)??
 
 # EJERCICIO 3
