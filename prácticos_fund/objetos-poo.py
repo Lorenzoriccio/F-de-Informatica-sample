@@ -1,4 +1,38 @@
 #POO en clase
+class Golondrina:
+  def __init__(self, energia):
+    self.energia = energia
+
+  def comer_alpiste(self, gramos):
+    self.energia += 4 * gramos
+
+  def volar_en_circulos(self):
+    self.volar(0)
+
+  def volar(self, kms):
+    self.energia -= 10 + kms 
+
+class Dragon:     
+  def __init__(self, cantidad_dientes, energia):
+    self.energia = energia
+    self.cantidad_dientes = cantidad_dientes
+
+  def escupir_fuego(self):
+    self.energia -= 2 * self.cantidad_dientes
+
+  def comer_peces(self, unidades):
+    self.energia += 100 * unidades
+
+  def volar_en_circulos(self):
+    self.energia -= 1
+
+  def volar(self, kms):
+    self.energia -= 10 + kms/10
+
+pepita = Golondrina(100)
+anastasia = Golondrina(200)
+roberta = Dragon(10, 1000)
+
 class Titan(): 
     def __init__(self, salud): 
         self.salud = salud 
@@ -28,3 +62,64 @@ class Titan():
     def esta_vivo(self): 
         return (self.salud > 0)
 
+#crear clase Enterprise
+'''
+class Enterprise(): 
+    def __init__(self, potencia, coraza):
+        self.potencia = 0
+        self.coraza = 0
+    
+    def potencia(self): 
+        return self.potencia 
+
+    def coraza(self): 
+        return self.coraza 
+
+    def encontrarPilaAtomica(self, potencia): 
+        return potencia + 25
+
+    def encontrarEscudo(self, coraza):
+        return coraza + 10
+
+    def fortalezaDefensiva(self):
+        return self.potencia + self.coraza
+        
+    def necesitaFortalecerse(self):
+        return self.potencia < 20 and self.coraza == 0
+        
+    def fortalezaOfensiva(self): 
+        if self.potencia < 20: 
+            return 0
+        else: 
+            return (self.potencia -20) / 2   '''
+
+#no me sale la de recibirAtaque aiuda 
+# POO EJERCICIOS ~ PRÁCTICA
+# EJERCICIO 1
+'''class Perro:
+    def __init__(self):
+        self._alimento = 0
+        self._caricias = 0
+
+    def energia(self):
+        return self._alimento + (self._caricias * 10)
+
+    def comer(self, gramos):
+        self._alimento += gramos
+
+    def acariciar(self):
+        self._caricias += 1
+
+    def estaDebil(self):
+        return self._caricias < 2'''
+
+# EJERCICIO 2
+'''  def volar(self, kms):
+    self.energia -= 10 + kms''' #inicial
+
+'''
+def volar(self, kms):
+    if self.energia <= 0: 
+        return False
+    else: 
+        self-energia -= 10 + kms''' #asi? Hay que poner el return?
