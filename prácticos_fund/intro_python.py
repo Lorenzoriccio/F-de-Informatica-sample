@@ -32,7 +32,7 @@ def longitud(string):
 # EJERCICIO 2
 string = input("Ingrese una frase: ")
 if len(string) >= 6: 
-  print(str.upperstring[4:6])
+  print(str.upper(string[4:6])) 
 else: 
   print("Su frase no tiene suficientes caracteres, por favor intente nuevamente")
 
