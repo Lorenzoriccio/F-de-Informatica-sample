@@ -81,7 +81,10 @@ def entrenar_equipo(self):
 
 from aves import pepita, roberta, anastasia, juanita, chimuelo, hipo
 hipo = Entrenador([roberta])
-'''Entrenador: 
+
 print(hipo) 
 print(hipo.equipo)
-print(hipo.agregar_animal_alado(chimuelo))'''
+print(hipo.agregar_animal_alado(chimuelo))
+print("energia chimuelo: ", chimuelo.energia)
+hipo.entrenar_dragon("energia chimuelo después: ", chimuelo.energia)
+print("energia roberta antes: ", roberta.energia)
