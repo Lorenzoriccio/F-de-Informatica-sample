@@ -50,7 +50,8 @@ pepita = Golondrina(100)
 juanita = Golondrina(100)
 anastasia = Golondrina(200)
 roberta = Dragon(10, 1000)
-chimuelo = Dragon(200, 1000)    # EJERCICIO 2
+maria = Golondrina(42)          #EJERCICIO 1
+chimuelo = Dragon(200, 1000)    #EJERCICIO 2
 
 '''Si las clases hijas heredan de la clase madre tendría todos sus atributos
 Eso se hace poniendo en el parentetis de la clase hija (ej. class Golondrina(AnimalesAlado):) 
@@ -62,15 +63,25 @@ class Entrenador: """El estado del entrenador es el equipo"""
 def __init__(self, equipo): 
     self.equipo = equipo 
 
-def equipo(self): 
+def el_equipo(self): #el guetter que retorna el estado de un objeto, ES LA FORMA CORRECTA
     return self.equipo
 
 def agregar_animal_alado(self, animal): 
     '''Este método toma un objeto animal alado que tendrá todos los atributos de esa clase'''
     self.equipo.append(animal)
 
-from aves import pepita, roberta, anastasia, juanita, chimuelo
+def entrenar_dragon(self, dragon): #sólo self porque contempla ya todo
+    for vuelta in range(20): 
+        dragon.volar_en_circulos()
+    dragon.comer_peces(3)
+
+def entrenar_equipo(self): 
+    for dragon in self.equipo: 
+        self.entrenar_dragon(dragon) 
+
+from aves import pepita, roberta, anastasia, juanita, chimuelo, hipo
 hipo = Entrenador([roberta])
 '''Entrenador: 
-print(hipo)
-print()    '''
+print(hipo) 
+print(hipo.equipo)
+print(hipo.agregar_animal_alado(chimuelo))'''
