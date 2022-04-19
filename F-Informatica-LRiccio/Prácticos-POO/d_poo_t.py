@@ -1,5 +1,14 @@
 # DESAFÍO I
-from aves import pepita, juanita, roberta
+'''🧗🏻‍♀️ Desafio I: Ahora te toca a vos:
+
+1. Creá a la golondrina maria con 42 puntos de energía inicial
+2. Creá al dragón chimuelo, con 200 dientes y 1000 de energía inicial
+3. Definí el método esta_debil, que nos dice si nuestras "aves" tiene menos de 10 puntos de energía (golondrinas) o menos de 50 puntos de energía (dragones)
+4. Definí el método esta_feliz, que nos dice si nuestras "aves" tiene más de 500 puntos de energía (sin importar de qué clase sean)
+5. Hace a hipo, entrenador de dragones: sabe aceptar a dragones, quienes son sus entrenados y hacerlos entrenar todos los dias, haciendoles dar 20 vueltas en circulos y luego comer su comida favorita hasta saciarse (3 peces)
+6. Hacé que hipo pueda entrenar a las golondrinas. ¿Qué comportamiento deberían entender las golondrinas ahora?
+7. Definí el método entrenamiento_intensivo, que hace dar vueltas en circulos a sus entrenados hasta que estén débiles.'''
+from aves import pepita, roberta, anastasia, juanita, chimuelo, hipo
 class AnimalesAlado: 
     def esta_feliz(self): 
       return self.energia > 500        #EJERICIO 5
@@ -23,6 +32,13 @@ class Golondrina(AnimalesAlado):
   def esta_feliz(self): 
       return self.energia > 500        #EJERICIO 4a
 
+  def entrenamiento_inetnsivo(self): 
+    '''Probá que vuelen en círculos, salvo que estén débiles.'''
+    try:  
+      self.volar_en_circulos(self)     #EJERCICIO 7a
+    except: 
+      self.esta_debil(self)
+
 class Dragon(AnimalesAlado):     
   def __init__(self, cantidad_dientes, energia):
     self.energia = energia
@@ -41,17 +57,23 @@ class Dragon(AnimalesAlado):
     self.energia -= 10 + kms/10
 
 def esta_debil(self): 
-    self.energia < 50           #EJERICIO 3b
+    self.energia < 50             #EJERICIO 3b
 
 def esta_feliz(self): 
-    return self.energia > 500   #EJERICIO 4b
+    return self.energia > 500     #EJERICIO 4b
+
+def entrenamiento_inetnsivo(self): 
+  try:  
+    self.volar_en_circulos(self)  #EJERCICIO 7b
+  except: 
+    self.esta_debil(self)
 
 pepita = Golondrina(100)
 juanita = Golondrina(100)
 anastasia = Golondrina(200)
 roberta = Dragon(10, 1000)
-maria = Golondrina(42)          #EJERCICIO 1
-chimuelo = Dragon(200, 1000)    #EJERCICIO 2
+maria = Golondrina(42)            #EJERCICIO 1
+chimuelo = Dragon(200, 1000)      #EJERCICIO 2
 
 '''Si las clases hijas heredan de la clase madre tendría todos sus atributos
 Eso se hace poniendo en el parentetis de la clase hija (ej. class Golondrina(AnimalesAlado):) 
@@ -68,7 +90,7 @@ def el_equipo(self): #el guetter que retorna el estado de un objeto, ES LA FORMA
 
 def agregar_animal_alado(self, animal): 
     '''Este método toma un objeto animal alado que tendrá todos los atributos de esa clase'''
-    self.equipo.append(animal)
+    self.equipo.append(animal)     #EJERCICIO 6?
 
 def entrenar_dragon(self, dragon): #sólo self porque contempla ya todo
     for vuelta in range(20): 
@@ -87,4 +109,4 @@ print(hipo.equipo)
 print(hipo.agregar_animal_alado(chimuelo))
 print("energia chimuelo: ", chimuelo.energia)
 hipo.entrenar_dragon("energia chimuelo después: ", chimuelo.energia)
-print("energia roberta antes: ", roberta.energia)
+print("energia roberta antes: ", roberta.energia) 
