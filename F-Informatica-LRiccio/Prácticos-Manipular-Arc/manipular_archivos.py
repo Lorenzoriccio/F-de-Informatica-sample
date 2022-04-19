@@ -1,5 +1,5 @@
-# Práctica de manipulación de archivos 
-# EJERCICIO 1 
+# Práctica de manipulación de archivos
+# EJERCICIO 1
 # Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
 with open('nombreArchivo', 'r') as file: 
     fileContent = file.readlines()
@@ -51,6 +51,18 @@ with open('otroArchivo', 'a') as f:
 
 # EJERCICIO 6 (en clase)
 # Realizá un programa que lea un archivo, elimine todos los saltos de línea y lo guarde en otro archivo.
+
+import re
+arch_original = (r'C:\Users\Usuario\Desktop\UNIVERSIDAD\fund_info\F-de-Informatica-sample\F-Informatica-LRiccio\Prácticos-Manipular-Arc\manipulacion_archivos.txt') 
+otro_archivo = (r'C:\Users\Usuario\Desktop\UNIVERSIDAD\fund_info\F-de-Informatica-sample\F-Informatica-LRiccio\Prácticos-Manipular-Arc\bio.text')
+
+with open(arch_original, 'r') as archivo:
+    contenido = archivo.read()
+    copiar = re.findall("\n", contenido)
+    pegar = contenido.replace("\n", '')
+    with open(otro_archivo, 'w') as otro: 
+        otro.write(pegar)
+
 # EJERCICIO 7 (en clase)
 # Escribí un porgrama que lea un archivo e identifique la palabra más larga, la cual debe imprimir y decir cuantos caracteres tiene.
 def palabra_mas_larga(archivo): 
