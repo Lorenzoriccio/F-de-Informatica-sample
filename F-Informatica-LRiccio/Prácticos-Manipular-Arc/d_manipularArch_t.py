@@ -9,7 +9,7 @@ with open('bio.txt', 'w') as file:
 # DESAFÍO II
 # 🧗‍♀️ Desafío II: Investigá sobre los métodos os.mkdir() y os.listdir()
 '''El comando de os.mkdir() crea una carpeta nueva ("Make directory")
-El comando de os.listdir() te lista los archivos de ti biblioteca ("List directory") '''
+El comando de os.listdir() te lista los archivos de tu biblioteca ("List directory") '''
 
 # DESAFÍO III
 # 🧗‍♀️ Desafío III: Abrí el archivo bio.txt y escribí una mini biografía de presentación. Para pensar 🤔:¿Cómo darías formato al texto que estas creando?
@@ -20,4 +20,3 @@ El comando de os.listdir() te lista los archivos de ti biblioteca ("List directo
 '''
 with open('manipulacion_archivos.txt', 'r') as file: 
     file.readlines() '''
-
