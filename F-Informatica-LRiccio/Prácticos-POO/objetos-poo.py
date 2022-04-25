@@ -112,6 +112,8 @@ class Enterprise():
 
     def estaDebil(self):
         return self._caricias < 2'''
+    # El estado de la clase Perro es el alimento y las caricias
+    # La interfaz son: energia(), comer(), acariciar() y estaDebil()
 
 # EJERCICIO 2
 '''  def volar(self, kms):
@@ -122,4 +124,22 @@ def volar(self, kms):
     if self.energia <= 0: 
         return False
     else: 
-        self-energia -= 10 + kms''' #asi? Hay que poner el return?
+        self-energia -= 10 + kms''' 
+
+class Notebook():
+    def __init__(self, marca, modelo, precio):
+        self.marca = marca
+        self.modelo = modelo
+        self.precio = precio        #cuando es estado se le pone return, cuando no, NO
+
+    def descuento(self, descuento):
+        self.precio -= descuento*(descuento/100)
+        print("El valor final es: ")
+    
+class Contador(): 
+    def __init__(self, valor): 
+        self.valor = 0
+
+    def contadorNeg(self): 
+        self.valor -= 1
+    
