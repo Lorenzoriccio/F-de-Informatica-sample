@@ -140,6 +140,17 @@ class Contador():
     def __init__(self, valor): 
         self.valor = 0
 
-    def contadorNeg(self): 
+    def dis(self): 
         self.valor -= 1
+
+    def inc(self, valor): 
+        self.valor += 1
+
+    def reset(self, valor): 
+        self.valor = 0 
     
+    def valorActual(self, valor):
+        self.valor = 0 
+
+    def valorNuevo(self, valor): 
+        self.valor = valor 
