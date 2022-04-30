@@ -62,6 +62,11 @@ for caracter in string:
 
 # EJERICIO 8
 # Escribí un programa que separe y devuelva los caracteres númericos de un string.
+import re
+texto = input('Ingrese un texto: ')
+patron = '\d'
+re.findall(patron, texto)
+
 # EJERICIO 9
 '''Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: 
 "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")'''

@@ -203,3 +203,8 @@ print(hipo.agregar_animal_alado(chimuelo))
 print("energia chimuelo: ", chimuelo.energia)
 hipo.entrenar_dragon("energia chimuelo después: ", chimuelo.energia)
 print("energia roberta antes: ", roberta.energia) 
+
+# DESAFÍO II
+# EJERCICIO 1
+# EJERCICIO 2
+# EJERCICIO 3

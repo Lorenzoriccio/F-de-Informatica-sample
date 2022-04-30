@@ -106,6 +106,8 @@ calculadora.restar(8)
 calculadora.multiplicar(2)
 calculadora.valorActual() #da 24 (ok)
 
+# EJERCICIO 7
+
 # Parte 2 de POO
 # EJERCICIO 1
 '''class Perro:
@@ -174,3 +176,26 @@ class Golondrina:
 
 # EJERCICIO 3
 # EJERCICIO 4
+class MedioDeTransporte: 
+  def __init__(self, combustible): 
+    self.combustible = combustible 
+    
+  def cargar_combustible(self, litros): 
+    self.combustible += litros 
+    
+  def entran_personas(self, personas): 
+    return personas <= self.maximo_personas()
+    
+class Moto(MedioDeTransporte): 
+  def recorrer(self, kilometros): 
+     self.combustible -= 1*kilometros
+      
+  def maximo_personas(self): 
+    return 2
+    
+class Auto(MedioDeTransporte): 
+  def recorrer(self, kilometros): 
+     self.combustible -= 0.5*kilometros
+      
+  def maximo_personas(self): 
+    return 5
