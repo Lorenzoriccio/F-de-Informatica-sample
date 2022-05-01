@@ -77,6 +77,15 @@ def palabra_mas_larga(archivo):
 
 # EJERCICIO 8    
 # Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
+with open(arch_original, 'r') as file1: 
+    file1Content = file.readlines
+
+with open(otro_archivo, 'r') as file2: 
+    file2Content = file2.readlines 
+
+with open('arch_destino', 'r') as file3: 
+    file3Content = file1Content + file2Content
+    
 # EJERCICIO 9 (en clase)
 # Realizá un programa que lea un archivo y obtenga la frecuencia de cada palabra que hay en el archivo. Recordá que la frecuencia es la relación entre número de veces que aparece la palabra en cuestión con respecto a la cantidad total de palabras.
 def word_counter(archivo): 

@@ -70,6 +70,16 @@ re.findall(patron, texto)
 # EJERICIO 9
 '''Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: 
 "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")'''
+# import re
+# texto = "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
+# patron = '-' + '.+' + '-'
+# re.findall(patron, texto) PREGUNTAR POR QUÉ ESTÁ MAL!
+
+import re
+string = "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
+patron = "-(.*?)-"
+print(re.findall(patron, string))
+
 # EJERICIO 10
 # Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.
 # EJERICIO 11
@@ -77,9 +87,26 @@ re.findall(patron, texto)
 de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).'''
 # EJERICIO 12
 # Escribí un programa que reemplace todas las ocurrencias de espacios, guiones bajos y dos puntos por la barra vertical (|).
+import re 
+testo = 'En esta guía estamos trabajando con: expresiones_regulares! Wacala.'
+patern = '[\s_:]'
+re.sub(patern, '|', testo)
+
 # EJERICIO 13
 # Escribí un programa que reemplace los dos primeros caracteres no alfanúmericos por guiones bajos.
 # EJERICIO 14
 # Realizá un programa que reemplace los espacios y tabulaciones por punto y coma.
+import re
+texto = '''Buen día.           Hoy no es.'''
+patern = '[\s\t]'
+re.sub(patern,';', texto)
+
 # EJERICIO 15
 # Realizá un programa que validar si una cuenta de mail está escrita correctamente.
+import re
+correo = 'lriccio24@ucema.edu'
+patern = '@'
+if patern in correo: 
+    print('Es válido!')
+else: 
+    print('Revisalo! No es un mail valido.')
