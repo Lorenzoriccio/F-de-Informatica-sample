@@ -5,7 +5,6 @@
 1.b. la lista de los substrings delimitados entre ‘aa’ y ‘gg’, que no incluyan ninguna ‘c’. P.ej. en ‘ttaatatggttaacatgg’, debe tomar solamente ‘tat’, rechazando ‘cat’.'''
 
 import re
-from wsgiref.validate import validator
 texto = "xsabc9cabcb3sabc9"
 patron = "bc9"
 print(re.findall(patron, texto)) #1.a.
