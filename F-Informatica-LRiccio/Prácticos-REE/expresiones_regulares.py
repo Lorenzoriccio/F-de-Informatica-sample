@@ -109,4 +109,4 @@ patern = '@'
 if patern in correo: 
     print('Es válido!')
 else: 
-    print('Revisalo! No es un mail valido.')
+    print('Revisalo! No es un mail valido.') 
