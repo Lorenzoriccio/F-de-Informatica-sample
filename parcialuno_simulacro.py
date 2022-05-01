@@ -4,6 +4,12 @@
 1.a. cuántas veces aparece el string bc9. P.ej. aparece 2 veces en xsabc9cabcb3sabc9, y ninguna en hola amigos mios. 
 1.b. la lista de los substrings delimitados entre ‘aa’ y ‘gg’, que no incluyan ninguna ‘c’. P.ej. en ‘ttaatatggttaacatgg’, debe tomar solamente ‘tat’, rechazando ‘cat’.'''
 
+import re
+from wsgiref.validate import validator
+texto = "xsabc9cabcb3sabc9"
+patron = "bc9"
+print(re.findall(patron, texto)) #1.a.
+
 # EJERCICIO 2
 '''Consigna N°2 (POO)
 Un taller de diseño de autos quiere estudiar un nuevo prototipo. Para eso, nos piden hacer un modelo concentrado en las características del motor. El prototipo de motor tiene 5 cambios (de primera a quinta), 
@@ -21,7 +27,58 @@ Los efectos por revoluciones y por cambio se acumulan. Por ejemplo, si el motor 
 2. Mejorá el código para que capture dicho error específicamente y lo maneje imprimiendo una advertencia al usuario sobre las posibles causas de dicho error 
 3. ¿Qué otras excepciones deberias considerar?'''
 
+def obtener_media(lista): 
+    try: 
+        sumatoria = 0
+        for i in lista: 
+            sumatoria += i 
+        print(sumatoria/len(lista)) 
+    except: 
+        raise Exception('Algo falló! Revisa nuevamente que sea una lista válida.')
+
 # EJERCICIO 4
 '''Escribí un programa que, por un lado, debe crear una nueva carpeta en la posición actual llamada Resultado y, 
 por otro, que lea todos los archivos con extensión .txt y escriba el contenido de todos en un único archivo llamado 
 texto_completo.txt, que tiene que estar dentro de la carpeta Resultado. NO se pueden usar rutas absolutas'''
+
+
+# EJERCICIO EXTRA! (objetos)
+# Class Enterprise
+class Enterprise(): 
+    def __init__(self, potencia, coraza):
+        self.potencia = 0
+        self.coraza = 0
+    
+    def potencia(self): 
+        return self.potencia 
+
+    def coraza(self): 
+        return self.coraza 
+
+    def encontrarPilaAtomica(self, potencia): 
+        return potencia + 25
+
+    def encontrarEscudo(self, coraza):
+        return coraza + 10
+
+    def fortalezaDefensiva(self):
+        return self.potencia + self.coraza
+        
+    def necesitaFortalecerse(self):
+        return self.potencia < 20 and self.coraza == 0
+        
+    def fortalezaOfensiva(self): 
+        if self.potencia < 20: 
+            return 0
+        else: 
+            return (self.potencia -20) / 2  
+
+    def recibirAtaque(self, fuerza):
+        resto = self.coraza - fuerza
+        self.coraza -= fuerza 
+        if self.coraza <= 0:
+            self.coraza -= resto
+        resto2 = self.potencia + resto
+        self.potencia += resto 
+        if self.potencia <= 0: 
+            self.potencia -= resto2 
