@@ -1,5 +1,10 @@
 # 🧗‍♀️ Desafío I: ¿Construí la expresión regular que obtenga al menos 4 dígitos?
-# 🧗‍♀️ Desafío II: ¿Construí la expresión regular que obtenga al entre 3 y 6 letras minúsculas?
+# 🧗‍♀️ Desafío II: ¿Construí la expresión regular que obtenga entre 3 y 6 letras minúsculas?
+import re
+string = 'Hola! 123 123. Probando.'
+patern = '[a-z]{3,6}'
+re.findall(patern, string)
+
 # 🧗‍♀️ Desafío III: ¿Construí la expresión regular que obtenga todas las apariciones del patrón ab en un string?
 import re
 texto = "absurdo es estar abajo en la terraza"
