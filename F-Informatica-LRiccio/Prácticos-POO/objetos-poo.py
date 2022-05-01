@@ -81,6 +81,37 @@ contador.dis()
 contador.valorActual() #da 25 (ok)
 
 # EJERCICIO 5
+class Contador(): 
+    def __init__(self, valor): 
+        self.valor = valor
+        self.comando = ''
+
+    def dis(self): 
+        self.valor -= 1
+        self.comando = 'disminuye'
+
+    def inc(self): 
+        self.valor += 1
+        self.comando = 'incrementa'
+
+    def reset(self): 
+        self.valor = 0 
+        self.comando = 'reset'
+    
+    def valorActual(self):
+        return self.valor
+
+    def valorNuevo(self, valor): 
+        self.valor = valor 
+        self.comando = 'actualiza'
+
+    def ultimoComando(self): 
+        print(self.comando)
+
+contador = Contador(10)
+contador.inc()
+contador.ultimoComando() #da incrementa (ok)
+
 # EJERCICIO 6
 class Calculadora: 
     def cargar(self, numero): 
@@ -107,6 +138,54 @@ calculadora.multiplicar(2)
 calculadora.valorActual() #da 24 (ok)
 
 # EJERCICIO 7
+class Gorriones:
+    def _init_ (self):
+        self.gramos = 0
+        self.kms = 0
+        self.vuelos = []
+        self.comidas = []
+
+    def volar(self, kms):
+        self.kms += kms
+        self.vuelos.append(kms)
+
+    def comer(self, gramos):
+        self.gramos += gramos
+        self.comidas.append(gramos)
+
+    def CSS(self):
+        if self.gramos <= 0:
+            return None
+        else:
+            return self.kms/self.gramos
+
+    def CSSP(self):
+        if self.gramos <= 0:
+            return None
+        else:
+            return int(max(self.vuelos))/int(max(self.comidas))
+
+    def CSSV(self):
+        if self.gramos <= 0:
+            return None
+        else:
+            return len(self.vuelos)/len(self.comidas)
+    
+    def enEquilibrio(self):
+        if(self.CSS() > 0,5 and self.CSS() < 2):
+            return True
+        else:
+            return False
+
+lila = Gorriones()
+lila.comer(35)
+lila.volar(80)
+lila.comer(70)
+lila.volar(120)
+print(lila.CSS())
+print(lila.CSSP())
+print(lila.CSSV())
+print(lila.enEquilibrio())
 
 # Parte 2 de POO
 # EJERCICIO 1
@@ -175,6 +254,7 @@ class Golondrina:
         return self.energia >= 150 and self.energia <= 300
 
 # EJERCICIO 3
+
 # EJERCICIO 4
 class MedioDeTransporte: 
   def __init__(self, combustible): 
