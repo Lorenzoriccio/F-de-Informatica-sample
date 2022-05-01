@@ -101,6 +101,7 @@ class Enterprise():
 5. Hace a hipo, entrenador de dragones: sabe aceptar a dragones, quienes son sus entrenados y hacerlos entrenar todos los dias, haciendoles dar 20 vueltas en circulos y luego comer su comida favorita hasta saciarse (3 peces)
 6. Hacé que hipo pueda entrenar a las golondrinas. ¿Qué comportamiento deberían entender las golondrinas ahora?
 7. Definí el método entrenamiento_intensivo, que hace dar vueltas en circulos a sus entrenados hasta que estén débiles.'''
+from tkinter import _ExceptionReportingCallback
 from aves import pepita, roberta, anastasia, juanita, chimuelo, hipo
 class AnimalesAlado: 
     def esta_feliz(self): 
@@ -206,5 +207,16 @@ print("energia roberta antes: ", roberta.energia)
 
 # DESAFÍO II
 # EJERCICIO 1
+# Inluyendo en las clases Dragon y Golondrina la clase concreta (Entrenador)
 # EJERCICIO 2
+class AvesNoVoladoras: 
+  def __init__(self, energia): 
+    self.energia = energia 
+  
+  def correr_en_circulos(self): 
+    self.energia -= 25
+
+  def come_alpiste(self):
+    return True
+
 # EJERCICIO 3
