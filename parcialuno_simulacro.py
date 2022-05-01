@@ -40,6 +40,18 @@ def obtener_media(lista):
 por otro, que lea todos los archivos con extensión .txt y escriba el contenido de todos en un único archivo llamado 
 texto_completo.txt, que tiene que estar dentro de la carpeta Resultado. NO se pueden usar rutas absolutas'''
 
+# Comentario
+import glob
+glob.glob('*.py') #es como un ls que busca archivos.py
+
+# Ejercicio 3 integrador
+# Escribí un programa que obtenga, a partir de una lista de strings una lista con la longitud de esas strings e imprima la longitud de la lista de strings y los elementos de la lista de longitudes
+lista_de_strings = ['hola', 'la paso', 'como el orto']
+len(lista_de_strings) #da 3 (ok)
+
+for i in lista_de_strings: 
+  long = len(i)
+  print('La longitud del string',i, 'es de: ',long) 
 
 # EJERCICIO EXTRA! (objetos)
 # Class Enterprise
