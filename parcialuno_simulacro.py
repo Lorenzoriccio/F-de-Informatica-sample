@@ -64,14 +64,20 @@ class Auto:
 2. Mejorá el código para que capture dicho error específicamente y lo maneje imprimiendo una advertencia al usuario sobre las posibles causas de dicho error 
 3. ¿Qué otras excepciones deberias considerar?'''
 
+# 3.1. ZeroDivisionError 
+# 3.2. 
 def obtener_media(lista): 
+    sumatoria = 0
+    for valor in lista: 
+
+      sumatoria += valor
+    longitud = len(lista)
+
     try: 
-        sumatoria = 0
-        for i in lista: 
-            sumatoria += i 
-        print(sumatoria/len(lista)) 
-    except: 
-        raise Exception('Algo falló! Revisa nuevamente que sea una lista válida.')
+      return sumatoria / longitud 
+    except ZeroDivisionError:  
+        print('Algo falló! No se puede dividir por 0.')
+# 3.3. Se podría verificar que una lista sea una lista, ya que si el parámetro es de otro tipo (no itinerable) el for no va a funcionar. 
 
 # EJERCICIO 4
 '''Escribí un programa que, por un lado, debe crear una nueva carpeta en la posición actual llamada Resultado y, 
