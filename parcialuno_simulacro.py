@@ -11,9 +11,8 @@ def funcion_1(texto):
     print(i)                            #1.a.
 
 import re
-def funcion_1_2(t): 
-    aa_gg = re.findall(r'aa([^c].*?)gg', t)
-    print(aa_gg)                        #1.b.
+def sin_c(string): 
+  return re.findall('a[\w]g', string)   #1.b.
 
 # EJERCICIO 2
 '''Consigna N°2 (POO)
@@ -83,6 +82,7 @@ def obtener_media(lista):
 '''Escribí un programa que, por un lado, debe crear una nueva carpeta en la posición actual llamada Resultado y, 
 por otro, que lea todos los archivos con extensión .txt y escriba el contenido de todos en un único archivo llamado 
 texto_completo.txt, que tiene que estar dentro de la carpeta Resultado. NO se pueden usar rutas absolutas'''
+# El os.getcwd() es una ruta absoluta y no se pueden usar en este ejercicio
 import os, glob 
 
 def unir_txt(): 
@@ -160,4 +160,26 @@ class Enterprise():
         if self.potencia <= 0: 
             self.potencia -= resto2 
 
-# class Estudiante
+# class Persona y Estudiante 
+# Falta energia_actual() 
+class Persona: 
+    def __init__(self, energia):
+        self.energia = energia 
+
+    def dormir(self, horas): 
+        self.energia += horas*12.5
+    
+    def comer(self): 
+        self.energia += 10
+
+    def hacer_ejercicio(self, minutos):
+        treinta = minutos//2 
+        self.energia -= treinta*25
+
+class Estudiante(Persona): 
+    def estudiar(self, minutos):
+        treinta = minutos//2 
+        self.energia -= 20
+
+    def aprobar(self): 
+        return True 
