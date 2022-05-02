@@ -83,6 +83,28 @@ def obtener_media(lista):
 '''Escribí un programa que, por un lado, debe crear una nueva carpeta en la posición actual llamada Resultado y, 
 por otro, que lea todos los archivos con extensión .txt y escriba el contenido de todos en un único archivo llamado 
 texto_completo.txt, que tiene que estar dentro de la carpeta Resultado. NO se pueden usar rutas absolutas'''
+import os, glob 
+
+def unir_txt(): 
+    os.mkdir('Resultado')
+    lista_txt = glob.glob('*.txt')
+    salida = open('Resultado/texto_coompleto.txt', 'a')
+    for txt in lista_txt: 
+        archivo = open(txt, 'r')
+        salida.write(archivo.read())
+        archivo.close()
+    salida.close()
+
+# Alternativa: 
+import os,glob
+
+def unir_txt(): 
+    os.mkdir('Resultado')
+    lista_txt = glob.glob('*.txt')
+    with open('Resultado/texto_completo.txt', 'a') as salida: 
+        for txt in lista_txt: 
+            with open(txt, 'r') as archivo: 
+                salida.write(archivo.read())
 
 # Comentario
 import glob
@@ -137,3 +159,5 @@ class Enterprise():
         self.potencia += resto 
         if self.potencia <= 0: 
             self.potencia -= resto2 
+
+# class Estudiante
