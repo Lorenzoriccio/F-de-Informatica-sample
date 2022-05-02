@@ -74,6 +74,7 @@ re.findall(patron, texto)
 # texto = "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
 # patron = '-' + '.+' + '-'
 # re.findall(patron, texto) PREGUNTAR POR QUÉ ESTÁ MAL!
+# Si lo sumas te busca el string exacto, no un patrón 
 
 import re
 string = "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
