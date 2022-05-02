@@ -1,13 +1,19 @@
 # Práctica de repaso! Simulacro!
 # EJERCICIO 1
-'''Consigna N°1 (RE) Escribir funciones que, dado un String, permitan obtener 
+'''Consigna N°1 (RE) Escribir funciones que, dado un String, permitan obtener: 
 1.a. cuántas veces aparece el string bc9. P.ej. aparece 2 veces en xsabc9cabcb3sabc9, y ninguna en hola amigos mios. 
 1.b. la lista de los substrings delimitados entre ‘aa’ y ‘gg’, que no incluyan ninguna ‘c’. P.ej. en ‘ttaatatggttaacatgg’, debe tomar solamente ‘tat’, rechazando ‘cat’.'''
 
 import re
-texto = "xsabc9cabcb3sabc9"
-patron = "bc9"
-print(re.findall(patron, texto)) #1.a.
+def funcion_1(texto): 
+    patron = 'bc9'
+    i = len(re.findall(patron, texto)) 
+    print(i)                            #1.a.
+
+import re
+def funcion_1_2(t): 
+    aa_gg = re.findall(r'aa([^c].*?)gg', t)
+    print(aa_gg)
 
 # EJERCICIO 2
 '''Consigna N°2 (POO)
