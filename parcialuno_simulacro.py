@@ -173,13 +173,15 @@ class Persona:
         self.energia += 10
 
     def hacer_ejercicio(self, minutos):
-        treinta = minutos//2 
+        treinta = minutos//30 
         self.energia -= treinta*25
+    
+    def energia_actual(self): 
+      return self.energia 
 
 class Estudiante(Persona): 
-    def estudiar(self, minutos):
-        treinta = minutos//2 
-        self.energia -= 20
+    def estudiar(self, horas):
+        self.energia -= 20*horas
 
     def aprobar(self): 
         return True 
