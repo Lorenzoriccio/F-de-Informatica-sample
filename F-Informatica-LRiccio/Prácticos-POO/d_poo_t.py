@@ -220,3 +220,5 @@ class AvesNoVoladoras:
     return True
 
 # EJERCICIO 3
+#3.a. Una Golondrina y AvesNoVoladoras no son polimorficas desde el punto de vista del Entrenador
+#3.b. Habría que agregar a la clase Entrenador los AvesNoVoladoras
