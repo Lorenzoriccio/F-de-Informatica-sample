@@ -13,7 +13,7 @@ def funcion_1(texto):
 import re
 def funcion_1_2(t): 
     aa_gg = re.findall(r'aa([^c].*?)gg', t)
-    print(aa_gg)
+    print(aa_gg)                        #1.b.
 
 # EJERCICIO 2
 '''Consigna N°2 (POO)
@@ -25,6 +25,38 @@ consumo. Se parte de una base de 0.05 litros por kilómetro. A este valor se le 
 2.b. Si el motor está en primera, entonces se multiplica por 3.
 2.c. Si el motor está en segunda, entonces se multiplica por 2.
 Los efectos por revoluciones y por cambio se acumulan. Por ejemplo, si el motor está en primera y a 5000 rpm, entonces el consumo es 0.05 * 5 * 3 = 0.75 litros/km. El modelo debe entender estos mensajes:'''
+class Auto: 
+    def __init__(self): 
+        self.cambios = 0
+        self.rpm = 0
+        self.consumo = 0.5
+
+    def arrancar(self): 
+        if self.rpm >= 500: 
+            self.cambios == 1
+
+    def subirCambio(self): 
+        self.cambios += 1
+    
+    def bajarCambio(self): 
+        self.cambios -= 1
+
+    def subirRPM(self, cuantos_rpm):
+        self.rpm += cuantos_rpm 
+
+    def bajarRPM(self, cuantos_rpm):
+        self.rpm -= cuantos_rpm
+
+    def velocidad(self): 
+        return (self.rpm/100)*(0.5+(self.cambio /2))
+    
+    def consumoActualPorKm(self): 
+        if self.rpm > 3000: 
+            return self.consumo * (self.rpm - 2500) / 500
+        if self.cambio == 1: 
+            return self.consumo * ((self.rpm - 2500) / 500)* 3 
+        if self.cambio == 2: 
+            return self.consumo * ((self.rpm - 2500) / 500)* 2
 
 # EJERCICIO 3
 '''Consigna N°3 (Manejo de exepciones) Ejecutá el script_misterioso.py y realizá resolvé: 
