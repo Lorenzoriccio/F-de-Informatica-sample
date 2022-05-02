@@ -95,6 +95,11 @@ re.sub(patern, '|', testo)
 
 # EJERICIO 13
 # Escribí un programa que reemplace los dos primeros caracteres no alfanúmericos por guiones bajos.
+def replace_primeros(string): 
+    print(re.sub('\W', '_', string, 2)) 
+    '''El 2 al final te indica cuántas veces querés que los reemplace (los n primeros). 
+    Si poner {2} seria las n veces que ese mismo caracater aparece '''
+
 # EJERICIO 14
 # Realizá un programa que reemplace los espacios y tabulaciones por punto y coma.
 import re
@@ -105,9 +110,9 @@ re.sub(patern,';', texto)
 # EJERICIO 15
 # Realizá un programa que validar si una cuenta de mail está escrita correctamente.
 import re
-correo = 'lriccio24@ucema.edu'
-patern = '@'
-if patern in correo: 
-    print('Es válido!')
+mail = input('Ingrese su correo: ')
+patern = '[a-zA-Z0-9]+[-_\.]*[a-zA-Z0-9]@[a-z]{2,4}(\.[a-z]{2,4}){0.1}'
+if re.search(patern, mail) is not None: 
+    print('El mail es válido')
 else: 
-    print('Revisalo! No es un mail valido.') 
+    print('El correo es inválido')
