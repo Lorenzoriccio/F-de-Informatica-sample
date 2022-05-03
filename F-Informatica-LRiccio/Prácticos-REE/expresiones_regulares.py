@@ -116,3 +116,11 @@ if re.search(patern, mail) is not None:
     print('El mail es válido')
 else: 
     print('El correo es inválido') 
+
+# EJERCICIO EXTRA INVENTADO!
+# Hacer un programa usando funciones regulares que valide ambos correos
+import re
+urls = '''https://google.com
+http://ong.org'''
+patern = 'https?://\w+\.\w{3}' 
+print(re.findall(patern, urls))  
