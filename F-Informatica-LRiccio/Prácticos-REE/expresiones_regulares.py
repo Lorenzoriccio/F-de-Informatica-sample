@@ -1,14 +1,20 @@
 # EJERCICIO 1
 # Escribí un programa que verifique si un string tiene al menos un carácter permitido. Estos caracteres son a-z, A-Z y 0-9.
 import re 
-string = "1. Profesora de la metria: Ana Julia Velez Rueda"
-re.search('\w', string) #funciona porque quiero encontrar al menos 1, pero está ok?
+str = "1. Profesora de la materia: Ana Julia Velez Rueda"
+def caracter_permitido(str):
+    print(re.search('\w', str))  
+
+caracter_permitido(str) 
 
 # EJERCICIO 2
 #Escribí un programa que verifique si un string tiene todos sus caracteres permitidos. Estos caracteres son a-z, A-Z y 0-9.
 import re 
 texto = "2. Tutor de la materia: Guillermo Benitez"
-re.search('\W', texto)
+def funcion_2(texto): 
+    print(re.search('\W', texto))
+
+funcion_2(texto) 
 
 # EJERCICIO 3 
 '''Creá un programa que verifique las siguientes condiciones:
@@ -17,22 +23,51 @@ si un string dado tiene una h seguida de una o más e.
 si un string dado tiene una h seguida de una o más e.
 si un string dado tiene una h seguida de dos o tres e.'''
 
+import re
+texto = input('Inserte su texto: ')
+patern1 = 'he?'
+patern2 = 'he+'
+patern3 = 'he{2,3}'
+
+def verificar(texto): 
+    cond1 = re.search(patern1, texto)
+    cond2 = re.search(patern2, texto)
+    cond3 = re.search(patern3, texto)
+    if cond3 is None: 
+        if cond2 is not None:
+            print('Se cumplieron las dos condiciones primeras')
+        elif cond1 is not None: 
+            print('Se cumplió sólo la condición primera')
+        else:
+            print('No se cumplió ninguna condición')
+    else: 
+        print('Se cumplieron las tres condiciones!') 
+
+verificar(texto) 
+
 # EJERCICIO 4
 # Realizá un programa que encuentre una palabra unida a otra con un guión bajo en un string dado (el string no debe contener espacios).
 import re
 string = "Defíni la función aprobar_materias"
-patron = '\w' + '_' + '\w'
-re.search(patron, string) 
+patron = '\w_\w'
+def funcion_4(string): 
+    print(re.search(patron, string))
+
+
+funcion_4(string) 
 
 # EJERICIO 5
 # Escribí un programa que diga si un string empieza con un número específico.
 import re
-string = input("ingrese una cadena de caracteres: ")
+str = input("ingrese una cadena de caracteres: ")
 patron = "^3"
-if re.match(patron, string) is not None:
-    print("el string comienza con el numero 3")
-else:
-    print("el string no emieza con el numero 3")
+def funcion_5(str):
+    if re.match(patron, str) is not None:
+        print("el string comienza con el numero 3")
+    else:
+        print("el string no empieza con el numero 3")
+
+funcion_5(str) 
 
 # EJERICIO 6
 # Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
