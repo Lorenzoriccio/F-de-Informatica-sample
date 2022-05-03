@@ -197,12 +197,6 @@ Permiten repetir cierta cantidad de veces una búsqueda dada.
 para toda una parte que tenga números, letras y símbolos
 Metacaracteres predefinidos:
 
-
-
-
-
-
-
 [ ] → todas las apariciones de lo que está dentro del corchete por separado → ej: [98] = 9, 8
 [^ ] → todo lo que no está dentro del corchete
 ( ) → agrupar
