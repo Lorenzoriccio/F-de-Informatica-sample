@@ -115,4 +115,4 @@ patern = '[a-zA-Z0-9]+[-_\.]*[a-zA-Z0-9]@[a-z]{2,4}(\.[a-z]{2,4}){0.1}'
 if re.search(patern, mail) is not None: 
     print('El mail es válido')
 else: 
-    print('El correo es inválido')
+    print('El correo es inválido') 

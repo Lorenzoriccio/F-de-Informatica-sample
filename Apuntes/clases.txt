@@ -1,0 +1,345 @@
+CLASE 1 - anavelezrueda@gmail.com
+Ctrl J = abre terminal 
+Prompt s: > $
+
+Tipos de datos
+Int = números enteros ; Float = números decimales → separados por punto
+	→ Mod o % → te da el sobrante (resto) de la división entera de un número entre otro
+	→ Operadores matemáticos
+
+
+// redondea al entero
+	
+
+				           +=  →  suma las variables que le indique y las asigna a una variable
+	→ Operadores relacionales
+
+
+
+
+	
+	→ int(string) → convierte a un string a número
+Booleanos = datos lógicos (True, False)
+String = texto, cadena de caracteres. Entre comillas simples o dobles
+	→ Obtener caracteres de una variable:
+		Nombre_variable[caracter_inicial:caracter_final]
+→ Manipular cadenas:
+		len(str)
+str.upper()
+str.lower()
+str.count('caracter') → devuelve el n° de ocurrencias del caracter en el string
+str.replace(‘caracter’ , ‘caracter’)
+str.capitalize() → pone en mayúscula la primer letra del string
+str.startswith(‘...’) → devuelve un booleano
+str.endswith(‘...’) 
+str.split(‘donde_lo_quiero_separar’) → me devuelve una lista
+str.find(‘caracter’) → me devuelve la posición de ese caracter // o str.index(‘caracter’)
+str.isnumeric()
+Str.isalpha
+Str[posición]
+print(f “my name is {variable}”) → f para que entienda que dentro del str hay una variable
+→ In = para saber si un string contiene a otro
+List(a)  = permiten manipular un gran número de datos en forma sencilla. Sus elementos pueden ser cadenas, números u otras listas (cualquier tipo de dato). lista = [2,5,4] 
+→ Son mutables
+→ para obtener el primer elemento de la lista: lista[0]
+	→ .append (‘’) → para agregar un elemento
+→ .extend([]) si quiero agregar más de un elemento
+→ .insert(posición, elemento) → para indicarle dónde lo quiero agregar
+	→ para sacar un elemento: lista.remove('25')
+	→ .pop() → para sacar el último elemento
+	→ .clear() → para vaciar la lista
+	→ .index(‘elemento’) devuelve el índice del elemento en la lista.
+	→ list(range(1, 10)) → creo una lista que va de 1 a 9
+	→ ‘....’ in list → para saber si … esta en la lista
+	→ .sort() → para ordenar alfabeticamente // .sort(reverse=True) → al reves
+	→ .count(‘elemento’) → para saber cuántas veces está el elemento en la lista
+Diccionarios
+	→ no tienen orden (no index), sino llaves
+	→ declarar un diccionario vacío: >>> diccionario = {}
+   >>> diccionario = dict()
+	→ con valor: diccionario = {"llave": "valor"}
+	→ acceder a todas las llaves: diccionario.keys()
+
+Comentarios: #
+
+Variables
+Nombre simbólico para un valor
+Sintaxis variable: >>> variable = valor de la variable
+
+Funciones:
+def funcion(argumento):
+    Operación sobre el argumento
+    return aquí va el resultado quiero devolver
+
+Condicionales
+If (condicion):
+	Que hacer si es cierto
+
+If (condicion):
+	Que hacer si es cierto
+elif:
+Otra indicación
+else:
+	Que hacer si es falso
+
+
+for variable_cambiante in lista:
+	Que hacer
+
+while condicion:
+	Qué hacer
+	Condición = condición + 1
+
+Input() → para ingresar datos por la terminal. AKA “ingresar por teclado”
+
+CLASE 2
+ls = lista los archivos (escribir en terminal)
+pwd = working direction / carpeta donde estoy
+cd = change direction / cambiar de un directorio a otro (entrar a una carpeta)
+cd .. = voy un paso para atrás (vuelvo a la carpeta de mayor jerarquía
+exit() para salir de python
+Directorio = carpeta → cd solo se puede usar para directorios, no archivos
+Con notepad nombre_archivo = abro el archivo en el bloc de notas
+Ejecutar un script:
+	→ script: una porción de código en un archivo (de cualquier extensión), generalmente ejecutable, que se ejecuta contra el intérprete. 
+	→ para ejecutarlo: python nombre_arch.py
+
+Apertura de archivos:
+	open(path_al_archivo, modo)
+
+Cerrar un archivo
+archivo = open(path_al_archivo, modo)
+archivo.close()
+o 
+with open(path_al_archivo, modo) as mi_arch:
+Este modo de apertura nos asegura el cierre del archivo al salir del bloque with, aún cuando aparezcan errores. Es por eso que esta es la forma más recomendada para la apertura de archivos.
+
+Abrir un archivo desde python
+Biblioteca OS (sistema operativo) → para movernos de una carpeta a otra, acceder a archivos, dialogar con la máquina para que ejecute otros programas, etc
+os.getcwd() = permite conocer el directorio de trabajo actual
+os.chdir(path) = cambiar de directorio de forma automática. Mostrará un error si intenta cambiar a un directorio que no existe
+Para trabajar con una biblioteca primero debo importarla (y debe estar instalada): import os
+os.getcwd() → pwd / lo guardo en una variable: path = os.getcwd() / y llamo a la variable
+path = path + "\\mi_arch.txt"   / llamo a la variable devuelta
+os.mkdir() → toma como argumento un nombre (str), y crea una carpeta
+os.path.exists(ruta_relativa) → devuelve un booleano
+os.listdir() → obtenemos una lista de todos los archivos que se encuentran en una carpeta
+Biblioteca Glob
+Tiene el mismo fin que os.listdir: acceder a los archivos que hayan en una determinada carpeta sin conocer sus nombres en particular, o acceder a un grupo de estos archivos que tengan algo en común.
+Obtiene todos los archivos de una carpeta, pero además, tenemos la posibilidad de listar archivos específicos.
+glob.glob("*.py")
+['Ej1.py', 'Ej3.py', 'Ej2.py', 'Ej4.py', 'Ej5.py'...]
+
+Manipular un archivo
+Escribir un archivo:
+.write()
+Ej:with open("mi_archivo.txt", "w") as my_file: 
+ 	     my_file.write("hola hola hola")
+Leer un archivo:
+.read()
+Lee del archivo según el número de bytes de tamaño. Si no se pasa ninguno, entonces lee todo el archivo.
+Ej: open("mi_archivo.txt", "r").read()
+O nombre_archivo.read() (si ya está abierto el archivo)
+.readline()
+Lee como máximo el número de caracteres de tamaño de la línea. Esto continúa hasta el final de la línea y luego regresa. returns one line from the file. You can also specify how many bytes from the line to return, by using the size parameter.
+Ej: nombre_archivo.readline() (si ya está abierto el archivo)
+.readlines()
+Esto lee las líneas restantes del objeto de archivo y las devuelve como una lista.
+Ej: nombre_archivo.readlines() (si ya está abierto el archivo)
+
+Rutas absolutas y relativas
+El path o ruta a un archivo es el recorrido de directorios o carpetas que debemos recorrer para llegar a nuestro archivo. Esta se escribe separando los nombres de los respectivos directorios separados por “/”. 
+Path absoluto: path entero. Ejemplo: 
+	"C:\home\Facultad\Fundamentos\Manipulación_de_archivos.md"
+Path relativo: path “resumido” (./)
+Por cuestiones de comodidad muchas veces es recomendable trabajar con rutas relativas ya que de esta manera solo son movemos dentro de las carpetas correspondientes y no hay peligro de poder acceder a otra carpeta y modificar cosas que no deberíamos, siendo, tal vez, el mayor "inconveniente" saber en qué carpeta estamos parados, para saber para dónde hay que moverse.
+ 
+CLASE 3
+Manejo de excepciones
+Excepciones = errores de ejecución del código. 
+TypeError : Ocurre cuando se aplica una operación o función a un dato del tipo inapropiado.
+ZeroDivisionError : Ocurre cuando se intenta dividir por cero.
+OverflowError : Ocurre cuando un cálculo excede el límite para un tipo de dato numérico.
+IndexError : Ocurre cuando se intenta acceder a una secuencia con un índice que no existe.
+KeyError : Ocurre cuando se intenta acceder a un diccionario con una clave que no existe.
+FileNotFoundError : Ocurre cuando se intenta acceder a un fichero que no existe en la ruta indicada.
+ImportError : Ocurre cuando falla la importación de un módulo.
+Try - except:
+Ej:try: 
+	Líneas con posibilidad de error
+  except: 
+	Qué hacer si hay error
+	→ ventaja: puedo seguir corriendo lo que sigue del script, sin que se corte (no rompre).
+	→ le puedo agregar el tipo de error que quiero que levante, poniéndo el tipo de error detrás del except (ej: SyntaxError, ZeroDivisionError, etc)
+	→ me conviene salvar errores específicos que mandar un except general
+Raise:
+Ej:if a == 0
+     raise TypeError(“a debe ser distinto de cero”)
+	→ lo pongo dentro de un if, para poner el condicional del error que quiero que levante
+	→ el código no sigue corriendo, pero sirve para comunicar el error
+
+Expresiones regulares
+Expresión regular: 
+Forma en la que puedo representar un conjunto de caracteres. Son cadenas de caracteres basadas en reglas sintácticas, que permiten describir secuencias de caracteres. Es decir es un criterio para buscar, capturar o reemplazar texto utilizando patrones. Se pueden concatenar para formar nuevas expresiones regulares; si, por ejemplo, A y B son expresiones regulares, AB también es una expresión regular.
+Sirve para buscar patrones de texto o caracteres en general
+Metacaracteres:
+Son caracteres especiales que, dependiendo del contexto, tienen un significado especial para las expresiones regulares.
+Secuencias de escape:
+
+→ \ = escape, viene antes del caracter especial. No se usa para comillas
+Metacaracteres delimitadores: 
+Permitirán delimitar dónde queremos buscar los patrones de búsqueda
+
+Metacaracteres cuantificadores:
+Permiten repetir cierta cantidad de veces una búsqueda dada. 
+
+→ {n,m}, especifican el mínimo número de ocurrencias en n y el máximo en m.
+para toda una parte que tenga números, letras y símbolos
+Metacaracteres predefinidos:
+
+
+
+
+
+
+
+[ ] → todas las apariciones de lo que está dentro del corchete por separado → ej: [98] = 9, 8
+[^ ] → todo lo que no está dentro del corchete
+( ) → agrupar
+\b → entiende las distintas palabras dentro de una frase 
+Rangos
+Un rango es una clase de caracteres abreviada que se crea escribiendo el primer caracter del rango, un guión y el último caracter del rango. Sirve para listar un conjunto de caracteres de interés, de este modo se encontrará uno cualquiera de los caracteres de la lista.
+Ej: [a-d] == [abcd]
+También podemos listar caracteres que no deben aparecer utilizando el ^. Ej: [^a-d] == cualquier caracter que no sea abcd.
+Expresiones regulares en Python:
+librería RE → import re
+
+CLASE 4
+Coincidencias o matches
+import re
+texto = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet et amet."
+patron = "amet"
+re.match()
+print(re.match (patron, texto))	#busca en la primer palabra
+Búsqueda por caracter
+print(texto[22:26])	#me devuelve la palabra ya que estoy dándole los caracteres 
+re.search()
+print(re.search(patron, texto))	#me devuelve dónde encontró a patron. Recupera el 
+objeto pero no el texto en sí. Busca en todo el texto
+→ .group()
+print(re.search(patron, texto).group())  #group hace que me devuelva el texto. 
+								Dentro del paréntesis le pongo el número 
+de la cantidad de veces que quiero que 
+								Encuentre la palabra.
+→ .group() para patrones
+	patron = "ipsum(.*)sit"	# .group() me va a devolver lo que está entre esas
+						Palabras, lo mismo con 0. Si le pongo 1, ya las 
+						Palabras que le puse no me las devuelve, solo lo del
+						Medio. Prioriza la primer aparición del delimitador.	patron = "ipsum(.*?)sit"	#Prioriza los matches internos del delimitador 
+(final).
+re.findall()
+print(re.findall(patron, texto))	#me va a devolver una lista con todas las 
+							Apariciones de lo que le pedí.
+	patron = "ipsum(.*?)sit"
+re.findall(patron, texto)	#devuelve en una lista la parte que se encuentra 
+dentro de los delimitadores.
+re.sub()
+re.sub(patron, “lo que quiero que ponga” texto)  #reemplaza el patron por lo que le 
+Indico
+
+Control de versiones
+Los sistemas de control de versiones comienzan con una versión base del documento y luego registran los cambios que realiza en cada paso del camino. Se podría pensar como un video: puede retroceder para comenzar en el documento inicial y reproducir cada estado o cambio que realizó, llegando finalmente a su versión más reciente.
+Sistema de control de versiones: 
+Es una herramienta que realiza un seguimiento de los cambios de un documento o directorio de forma automática, creando efectivamente diferentes versiones de nuestros archivos. 
+Cada registro de estos cambios se denomina commit y mantiene metadatos útiles sobre ellos. 
+El historial completo de commits para un proyecto en particular y sus metadatos forman un repositorio.
+Siguiendo con la analogía del video, podemos pensar cada commit como un fotograma en nuestro video, siendo este el historial completo de cambios de un archivo o directorio. 
+Cada commit funciona como un “paquete” de cambios realizados, que se pueden ir agregando al stage (estado intermedio con cambios) mediante el comando git add. Me va a diferenciar (en color(?)) lo que es nuevo de lo que ya estaba en el documento. 
+Estos cambios se gestionan como una unidad, al generar un commit, y quedan registrados en una “foto” al hacer git commit. 
+Es muy importante especificar los cambios realizados en cada commit, esto nos ayudará a rastrear cualquier cambio al querer volver atrás. 
+Al hacer commit se obtiene un ID del mismo, que luego puede usarse en otros comandos para referenciar este bloque de cambios. 
+Orden: add → add → … →  commit → se guardan los cambios, “vuelve” a cero (con las nuevas modificaciones como parte del documento)
+Dónde:
+Git trabaja con un repositorio (app web donde subimos info -almacenamiento al que se accede en línea, a través de internet- y queda almacenada) local que está en tu computadora, donde vas a ir agregando tus commits y uno remoto (en la nube) en el cual podes subir tus commits, compartirlos con alguien más o bajarte los commits que haya subido alguien. 
+Podemos hacer una sincronización saliente del repo local al remoto (origin), haciendo git push. Lo “empujo” a la nube = subir a github. Este comando envía los commits generados localmente que no se hayan enviado anteriormente. Podemos también descargar los cambios del repositorio remoto utilizando el comando git pull. 
+Cómo trabajar:
+Necesitaremos un repositorio local y uno remoto. Desde el local haremos cambios, que luego vamos a agregar al repositorio remoto. 
+La primera vez que usas GIT vas a tener que configurar tu nombre completo y tu email con los siguientes comandos: 
+○ git config --global user.name "TU NOMBRE" 
+○ git config --global user.email "TU DIRECCIÓN DE EMAIL" 
+Una vez creada la cuenta y un repositorio en alguno de estos servicios, tenés que bajarte la información del repositorio remoto a tu computadora
+Conflictos
+Suele suceder cuando trabajamos en equipo o desde más de una computadora sobre el mismo proyecto, que se sobreescriba o modifique una misma porción de código dentro de un archivo. En general sucede cuando hemos introducido cambios (commits) localmente que sobrescriben los cambios que se encuentran remotos y git no sabe qué versión es la correcta. Estos conflictos pueden ser solucionados o tomando la versión remota o bien generando un nuevo commit de forma local y subiéndolos al repositorio remoto.
+Sistema de ramas/branches
+Nos permite desarrollar en paralelo diferentes funcionalidades (cada una en un branch distinto), sin mezclar el código, hasta tener una versión final y estable. Luego, cuando se pretenden integrar los cambios de cada branch para obtener un producto más Ana Julia Velez Rueda completo, se fusionan mediante un merge.
+Podemos movernos entre las diferentes ramas de nuestro proyecto mediante la sentencia git checkout <nombreBranch> , de este modo podemos trabajar en cambios que tienen como base el commit al que hace referencia dicho branch 
+Además con el parámetro -b puede crearse un nuevo branch antes de moverse al mismo. Por ejemplo, para crear el branch dev y comenzar a trabajar en el mismo, debemos hacer: git checkout -b dev.
+Y podemos corroborar en qué rama nos encontramos haciendo: git branch - -show-current
+
+CLASE 5
+Ctrl K + Ctrl C == comentar líneas de código
+Ctrl K + Ctrl U == DEScomentar líneas de código
+Clonar =similar= pull   → pull hace solo lo nuevo
+		 	→ al clonar estamos clonando TODO
+    ⇒ file → clone → url
+Paradigmas de programación - Introducción a la programación con objetos
+Paradigmas de Programación: Un paradigma de programación es un conjunto de ideas que describe una forma de entender la construcción de programas. Estas ideas nos permiten pensar y estructurar el código de distintas formas. Ninguna forma es mejor que otra, si no que son útiles o no para una circunstancia dada o para resolver un problema dado. Existen lenguajes que se concentran en las ideas de un único paradigma así como hay otros que permiten la combinación de ideas provenientes de distintos paradigmas.
+Programación Orientada a Objetos: En particular el paradigma de Programación Orientada a Objetos (POO) es un estilo o una forma de pensar los programas en la cual se estructura un programa construyendo piezas simples y reutilizables de código para crear instancias individuales de objetos. Un programa basado en este paradigma es un conjunto de objetos que interactúan entre sí en un ambiente mandándose mensajes para lograr un objetivo determinado.
+Poo → objetos (entidad computacional: pedazo de código al que le mando mensajes y da una respuesta ⇒ es una entidad computacional que entiende mensajes y tiene atributos. Son instancias de una clase: es la creación concreta de una cosa abstracta). En poo, el código está compuesto por objetos que se comunican entre sí. 
+Objetos y mensajes: Un objeto es un ente computacional con el que podemos comunicarnos mediante mensajes y puede (o no) tener un estado interno (referencias a otros objetos).
+Cuando los objetos hacen o pueden hacer algo, en principio, no tienen porqué responder nada (None). Cuando el objeto hace o conoce la operación que le pedimos nos tira error (atribute error).
+Lo que los objetos saben/pueden hacer == “atributos”. 
+Para pasarle mensajes a los objetos: .mensaje()  → un mensaje es un método (“”función”” que pertenece a un objeto -  la descripción de qué hacer cuando se recibe un mensaje del mismo nombre). Un método está dentro de una clase, una función puede trabajar por fuera también. Los métodos siempre tienen como primer argumento un self (=representa a un objeto dado). No todos los objetos tienen que reaccionar de igual forma a los mismos mensajes. En otras palabras, no todos los objetos tienen por qué comportarse igual.
+Si le paso un mensaje sin paréntesis, le estoy pidiendo un estado. Los objetos tienen/pueden tener (uno o varios) estados. Los estados son variables/pueden fluctuar de acuerdo con lo que le pase al objeto. Lo que pasa cuando cambia el estado se llama comportamiento de los objetos. ESTADO = conjunto de atributos (arquitectura ⇒ estático). Estado dinámico de los objetos que contempla los valores. 
+Clase: nos da una idea de lo que puede hacer un objeto de esa clase. Los objetos tienen identidad. Dos objetos distintos son instancias distintas de una clase. Al acto de crear un objeto a partir de una clase (“molde”) se lo denomina instanciación, y por tanto a los objetos también se los denomina instancias (de una clase particular). Para comparar la identidad de dos objetos, puedo igualarlos (ob1 == ob2). Al formar parte de la misma clase, se espera que los objetos puedan hacer lo mismo, y entiendan los mismos mensajes. Lo compruebo pidiéndole a los dos objetos lo mismo. Puede haber una clase madre, con “subclases” dentro, que generalicen y engloben a las otras subclases: todos los atributos que tiene la clase madre, son heredados por las subclases. 
+Interfaz de un objeto: conjunto de mensajes que puede entender. → polimorfismo****
+Ambiente: contexto en el que vive el objeto. (por ejemplo, el código de un archivo). Dentro del mismo ambiente pueden convivir distintos objetos. 
+Instanciación:
+	Nombre_variable = clase(estado_inicial)
+Para crear una clase:
+ 	class Nombre_clase :
+		def __init__(self, estado):
+			self.estado = estado
+
+		def atributo(self, variable_a_introducir_del_atributo):
+			defino lo que quiero que haga
+
+CLONAR REPO EN VISUAL
+Abrir terminal git bash
+ulichtenbaum@ING-T480-07 MINGW64 ~/Documents/Fundamentos_de_informatica
+$ git clone https://github.com/solbertinat/fundamentos_de_info2022.git
+LUEGO ENTRO EN EL REPO
+cd fundamentos_de_info2022
+PARA SUBIR UN ARCHIVO
+Muevo los archivos a la carpeta del repositorio
+git add *
+git commit -m “escribir_algo”
+git push
+
+
+CLASE 6
+*****polimorfismo: compartir interfaces. Para poder definir polimorfismo, debe haber alguien (otro objeto) observando para saber si lo hay. capacidad de un objeto de poder enviarle el mismo mensaje indistintamente a objetos de distintas clases. Es necesaria la presencia de al menos tres objetos: uno que envíe el mensaje y dos de clases distintas que puedan entenderlo. TIENEN QUE TENER LOS MISMOS ATRIBUTOS EN LA MISMA INTERFACE, si no no es polimorfismo. 
+solo tienen self como parámetro cuando sus atributos siempre se inicializan con el mismo valor. Ej:
+class Pizza:
+  def __init__(self):
+    self.condimento = "adobo"
+Si una clase no toma atributos, no se declara el __init__
+Getter = método con el objetivo de que los objetos se expongan. Me permite acceder a los estados de un objeto
+
+CLASE 7
+Las listas, diccionarios, strings, booleanos y números son objetos
+Diferencia función - procedimiento: las funciones retornan un valor mientras que los procedimientos tienen un efecto, es decir, modifican algo.
+Return + == → es equivalente a un if que devuelve un booleano
+Atributo sin ()
+Metodo con ()
+
+Condición para un objeto:
+“Un zombie es un peligro si tiene más de 50 de hambre”
+  def es_un_peligro(self):
+    return self.hambre > 50
+
+Clase abstracta = a diferencia de las concretas, nunca las instanciamos; es decir, no creamos objetos con esa clase, solo nos sirven para proveer comportamiento a sus subclases.
+
+CLASE 8
+En el exámen tiene que correr el archivo, por ende se tiene que hacer un archivo por ejercicio.
+El bool devuelve un booleano, es decir para saber si algo es verdadero o falso. El PROGRAMA ES UNA FUNCIÓN, no un texto suelto que tenés que escribir para que corra. Si no llegamos a definir un método en una clase, definimos el nombre del método y abajo ponemos pass. El try tiene que estar dónde vos crees que puede estar el error. 
