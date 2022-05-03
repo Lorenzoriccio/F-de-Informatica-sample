@@ -207,6 +207,8 @@ Metacaracteres predefinidos:
 [^ ] → todo lo que no está dentro del corchete
 ( ) → agrupar
 \b → entiende las distintas palabras dentro de una frase 
+group(0) → devuelve el substring incluyendo sus límites (ex. 'ipsum dolor sit')
+group(1) → devuelve el substring sin incluir sus límites (ex. ' dolor ') 
 Rangos
 Un rango es una clase de caracteres abreviada que se crea escribiendo el primer caracter del rango, un guión y el último caracter del rango. Sirve para listar un conjunto de caracteres de interés, de este modo se encontrará uno cualquiera de los caracteres de la lista.
 Ej: [a-d] == [abcd]
