@@ -10,9 +10,10 @@ def funcion_1(texto):
     i = len(re.findall(patron, texto)) 
     print(i)                            #1.a.
 
-import re
-def sin_c(string): 
-  return re.findall('a[\w]g', string)   #1.b.
+def funcion_1_2(string): 
+    aa_gg = re.findall('aa[^c]*?gg', string)
+    print(aa_gg)
+funcion_1_2('ttaatatggttaacatgg')       #1.b. 
 
 # EJERCICIO 2
 '''Consigna N°2 (POO)
@@ -161,13 +162,18 @@ class Enterprise():
             self.potencia -= resto2 
 
 # class Persona y Estudiante 
-# Falta energia_actual() 
 class Persona: 
     def __init__(self, energia):
         self.energia = energia 
 
+    def energia_actual(self): 
+        return self.energia 
+
     def dormir(self, horas): 
-        self.energia += horas*12.5
+        if horas <= 8: 
+            self.energia += horas*12.5
+        else: 
+            self.energia = 100
     
     def comer(self): 
         self.energia += 10
@@ -185,3 +191,10 @@ class Estudiante(Persona):
 
     def aprobar(self): 
         return True 
+
+estudiante = Estudiante(100)
+estudiante.hacer_ejercicio(30)
+estudiante.estudiar(3)
+estudiante.comer()
+print(estudiante.aprobar())
+print(estudiante.energia_actual()) 

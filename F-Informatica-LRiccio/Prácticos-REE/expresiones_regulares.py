@@ -134,6 +134,17 @@ print(funcion_9("Hoy estuvimos trabajando con re -regular expression- en python 
 # EJERICIO 11
 '''Realizá un programa que dado una lista de strings verifique que dos palabras dentro del string empiecen con la letra P y las imprima. (Lista 
 de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).'''
+import re
+lista_strings = ["Práctica Python", "Práctica C++", "Práctica Fortran"]
+patron = "(P\w*)\s(P\w*)"
+def funcion_11(lista_strings): 
+    for string in lista_strings:
+        coincidencia = re.search(patron, string)
+        if coincidencia is not None:
+            print(coincidencia.group())  
+
+funcion_11(lista_strings) 
+
 # EJERICIO 12
 # Escribí un programa que reemplace todas las ocurrencias de espacios, guiones bajos y dos puntos por la barra vertical (|).
 import re 
