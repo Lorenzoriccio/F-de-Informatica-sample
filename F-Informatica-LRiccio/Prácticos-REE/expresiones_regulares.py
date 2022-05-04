@@ -60,6 +60,7 @@ funcion_4(string)
 # Escribí un programa que diga si un string empieza con un número específico.
 import re
 str = input("ingrese una cadena de caracteres: ")
+num = int(input('ingresa el número: '))
 patron = "^3"
 def funcion_5(str):
     if re.match(patron, str) is not None:
@@ -72,35 +73,39 @@ funcion_5(str)
 # EJERICIO 6
 # Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
 import re
-strings = ["hola", "te", "hoy"]
+lista = ["hola", "te", "ayer"]
 frase = "hola como te sentis hoy?"
 
-for palabra in strings:
-    if re.search(palabra, frase) is not None:
-        print("la palabra esta en la frase")
-    else:
-        print("la palabra no esta en la frase")
+def funcion_6(lista, frase):
+    for palabra in lista:
+        if re.search(palabra, frase) is not None:
+            print("la palabra '", palabra, "' está en la frase")
+        else:
+            print("la palabra '", palabra, "' no está en la frase") 
+
+funcion_6(lista, frase) 
 
 # EJERICIO 7
 # Realizá un programa que encuentre un string que contenga solamente letras minúsculas, mayúsculas, espacios y números.
 import re
-string = input("ingrese una frase: ")
-patron = "[a-zA-Z0-9(\s)]"
-coincidencias = []
-
-for caracter in string:
-    coincidencias.append(re.findall(patron, caracter))
-    if len(coincidencias) == len(string):
-        print("todos los caracteres de la frase son o letras mayusculas, o letras minusculas, o numeros, o espacios")
+string = input('Inserte el string: ')
+def funcion_7(string):
+    if re.search('\w\s', string):
+        print('Cumple las condiciones')
     else:
-        print("al menos un caracter no es una letra mayuscula o minuscula, numero o espacio")
+        print('No cumple las condiciones')
+
+funcion_7(string) 
 
 # EJERICIO 8
 # Escribí un programa que separe y devuelva los caracteres númericos de un string.
 import re
-texto = input('Ingrese un texto: ')
+str = input('Ingrese un texto: ')
 patron = '\d'
-re.findall(patron, texto)
+def funcion_8(str): 
+    print(re.findall(patron, str))
+
+funcion_8(str)  
 
 # EJERICIO 9
 '''Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: 
@@ -114,7 +119,15 @@ re.findall(patron, texto)
 import re
 string = "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
 patron = "-(.*?)-"
-print(re.findall(patron, string))
+print(re.findall(patron, string)) 
+# imprime lo que está entre guiones
+
+import re
+def funcion_9(string):
+    return re.sub('-(.*?)-', '', string)
+
+print(funcion_9("Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")) 
+# imprime todo menos lo que está entre guiones
 
 # EJERICIO 10
 # Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.

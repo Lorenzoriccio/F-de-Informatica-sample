@@ -1,14 +1,16 @@
 # Práctica de manipulación de archivos
 # EJERCICIO 1
 # Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
-with open('nombreArchivo', 'r') as file: 
-    fileContent = file.readlines()
+def funcion_1(archivo, letra):
+    with open(archivo, 'r') as file: 
+        fileContent = file.readlines()
+    for fileline in fileContent: 
+        noEmpiezaCon = 0 
+        if not str.startswith(fileline, letra): 
+            noEmpiezaCon += 1
+        print(noEmpiezaCon) 
 
-for fileline in fileContent: 
-    noEmpiezaCon = 0 
-    if not str.startswith(fileline, 'P'): 
-        noEmpiezaCon += 1
-    print(noEmpiezaCon) 
+funcion_1('bio.text', 'M') 
 
 # EJERCICIO 2
 # Escribí un programa que lea un archivo e imprima las primeras n líneas.
@@ -33,9 +35,12 @@ for fileline in fileContent:
 
 # EJERCICIO 4
 # Hacé un programa que lea un archivo, cuente la cantidad de palabras del archivo y luego imprima el resultado.
-with open('nombreArchivo', 'r') as file: 
-    fileContent = file.readlines()
-    print(len(fileContent)) 
+import re
+def cuantas_lineas(arch): 
+    with open(arch, 'r') as file: 
+        print(len(file.read())) 
+
+cuantas_lineas('bio.text') 
 
 # EJERCICIO 5
 # Escribí un programa que lea un archivo, reemplace una letra por esa misma letra más un salto de línea y lo guarde en otro archivo.
@@ -56,12 +61,15 @@ import re
 arch_original = (r'C:\Users\Usuario\Desktop\UNIVERSIDAD\fund_info\F-de-Informatica-sample\F-Informatica-LRiccio\Prácticos-Manipular-Arc\manipulacion_archivos.txt') 
 otro_archivo = (r'C:\Users\Usuario\Desktop\UNIVERSIDAD\fund_info\F-de-Informatica-sample\F-Informatica-LRiccio\Prácticos-Manipular-Arc\bio.text')
 
-with open(arch_original, 'r') as archivo:
-    contenido = archivo.read()
-    copiar = re.findall("\n", contenido)
-    pegar = contenido.replace("\n", '')
-    with open(otro_archivo, 'w') as otro: 
-        otro.write(pegar)
+def funcion_6(arch_origina, otro_archivo):
+    with open(arch_original, 'r') as archivo:
+        contenido = archivo.read()
+        copiar = re.findall("\n", contenido) 
+        pegar = contenido.replace("\n", '')
+        with open(otro_archivo, 'w') as otro: 
+            otro.write(pegar)
+
+funcion_6(arch_original, otro_archivo) 
 
 # EJERCICIO 7 (en clase)
 # Escribí un porgrama que lea un archivo e identifique la palabra más larga, la cual debe imprimir y decir cuantos caracteres tiene.
@@ -77,15 +85,12 @@ def palabra_mas_larga(archivo):
 
 # EJERCICIO 8    
 # Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
-with open(arch_original, 'r') as file1: 
-    file1Content = file.readlines
+def join_files(file1, file2, file3):
+    with open(file1, 'r') as f1, open(file2, 'r') as f2, open(file3, 'a') as f3: 
+        f3.write(f1.read() + f2.read())
 
-with open(otro_archivo, 'r') as file2: 
-    file2Content = file2.readlines 
+join_files('bio.text', 'clases.txt', 'manipluacion_archivos.txt') 
 
-with open('arch_destino', 'r') as file3: 
-    file3Content = file1Content + file2Content
-    
 # EJERCICIO 9 (en clase)
 # Realizá un programa que lea un archivo y obtenga la frecuencia de cada palabra que hay en el archivo. Recordá que la frecuencia es la relación entre número de veces que aparece la palabra en cuestión con respecto a la cantidad total de palabras.
 def word_counter(archivo): 
