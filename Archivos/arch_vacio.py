@@ -1,10 +1,6 @@
 import re
-# def sin_c(string): 
-#   return re.findall('aa[^c]*?gg', string)
+patern = 'X(ab)*Y' 
+def funcion_1(string): 
+    print(re.findall(patern, string))   
 
-# sin_c('ttaatatggttaacatgg') 
-
-def funcion_1_2(string): 
-    aa_gg = re.findall('aa[^c]*?gg', string)
-    print(aa_gg)
-funcion_1_2('ttaatatggttaacatgg') 
+funcion_1('XbaaaYjXababYqXbabbbbaaYqXffeeY') 

@@ -169,12 +169,10 @@ re.sub(patern,';', texto)
 # EJERICIO 15
 # Realizá un programa que validar si una cuenta de mail está escrita correctamente.
 import re
-mail = input('Ingrese su correo: ')
-patern = '[a-zA-Z0-9]+[-_\.]*[a-zA-Z0-9]@[a-z]{2,4}(\.[a-z]{2,4}){0.1}'
-if re.search(patern, mail) is not None: 
-    print('El mail es válido')
-else: 
-    print('El correo es inválido') 
+def validar_mail (mail):
+    return bool(re.search("[a-zA-Z0-9]+[-_\.]*[a-zA-Z0-9]+@[a-zA-Z]{2,9}(\.[a-zA-z]{2,4})",mail))
+
+print(validar_mail("lorenzo.riccio@gmail.com")) 
 
 # EJERCICIO EXTRA INVENTADO!
 # Hacer un programa usando funciones regulares que valide ambos correos
