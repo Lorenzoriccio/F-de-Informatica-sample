@@ -1,6 +1,7 @@
 # PARTE 2
 # HTTPS & REST
 # Apuntes clase 
+#url a gatos: https://http.cat/
 
 import requests 
 pedido = requests.get('https://macowins-server.herokuapp.com/prendas')
