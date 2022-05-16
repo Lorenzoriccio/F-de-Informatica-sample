@@ -66,7 +66,8 @@ print(pedido_remeras_xs.json())
 '''Ejemplo de algunas etiquetas más:
 <section> = representa una sección genérica de un documento
 <div> = sirve para crear secciones o agrupar contenidos
-<span> = sirve para aplicar estilo al texto o agrupar elementos en línea '''
+<span> = sirve para aplicar estilo al texto o agrupar elementos en línea
+<ul> = para hacer listas  '''
 
 # Desafio II :Creá un archivo de texto con la herramienta que tengamos a mano (visual code, editor de texto, bloc de notas,etc) y lo guardamos con el nombre “mi_pagina” con extensión “.html” : “mi_cv.html”
 # Desafio IV: Buscá qué otras etiquetas semánticas existen
