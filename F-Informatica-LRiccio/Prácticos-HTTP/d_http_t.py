@@ -49,8 +49,17 @@ pedido_remeras_xs = requests.get('https://macowins-server.herokuapp.com/prendas?
 print(pedido_remeras_xs.json()) 
 
 # Desafío VIII: decí usando tus palabras qué significa la URI de este ejemplo cerebral 😛.
+'''Las URI son un formato estandarizado de strings'''
+
 # Desafío IX: ¿a través de qué IP accedés a google desde tu computadora?
+'''Las IP son el identificatorio de cada computadora. Una dirección IP es una dirección única que identifica 
+a un dispositivo en Internet o en una red local. IP significa “protocolo de Internet”, que es el conjunto de 
+reglas que rigen el formato de los datos enviados a través de Internet o la red local.
+Cuando accedes a Google estás usando 8.8.8.8. o 8.8.4.4¿?'''
+
 # Desafío X: ¿Qué devolverá la página principal (home) de nuestro sitio? Averiguá el Content-Type de /home
+print(r1.headers)
+
 # Desafío XI: consultá 4 sitios diferentes y averiguá para todos ellos qué servidor utilizan, si el contenido se transfiere encriptado, y la fecha de expieración del contenido.
 # Desafío XII: ¿qué código de estado devuelve cuando un recurso es creado? Averigualo
 # Desafío: Nos quedaron prendas con ids que no nos sirven; ¡borralas!
