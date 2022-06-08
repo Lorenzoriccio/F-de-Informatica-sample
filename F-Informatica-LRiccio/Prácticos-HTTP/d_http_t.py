@@ -94,6 +94,11 @@ print(yt.headers)
 <ul> = para hacer listas  '''
 
 # Desafio II :Creá un archivo de texto con la herramienta que tengamos a mano (visual code, editor de texto, bloc de notas,etc) y lo guardamos con el nombre “mi_pagina” con extensión “.html” : “mi_cv.html”
+# Listo
 # Desafio IV: Buscá qué otras etiquetas semánticas existen
+'''Otras etiquetas semánticas: 
+<aside> = marca un trozo de contenido que está relacionado con el contenido de la página web, pero que no es parte del mismo (ex. glosario)
+<main> = representa el contenido predominante de la página.'''
 # Desafio V: Buscá qué otros atributos existen y dale estilo al documento HTML creado en el Desafío II
+# Listo
 # Desafío VI: Investigá en la documentación de ipywidgets qué otros elementos HTML podés mostrar y probalos
