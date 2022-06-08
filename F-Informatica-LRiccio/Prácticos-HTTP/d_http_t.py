@@ -60,9 +60,22 @@ Cuando accedes a Google estás usando 8.8.8.8. o 8.8.4.4¿?'''
 # Desafío X: ¿Qué devolverá la página principal (home) de nuestro sitio? Averiguá el Content-Type de /home
 print(r1.headers)
 '''{'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Expires': '-1', 'Content-Type': 'application/json; 
-charset=utf-8', 'Content-Length': '49', 'Etag': 'W/"31-OlDFK7SS8oUCKcn/LZE2poJFDDo"', 'Vary': 'Accept-Encoding', 'Date': 'Mon, 06 Jun 2022 12:04:12 GMT', 'Via': '1.1 vegur'}'''
+charset=utf-8', 'Content-Length': '49', 'Etag': 'W/"31-OlDFK7SS8oU(CKcn/LZE2poJFDDo"', 'Vary': 'Accept-Encoding', 'Date': 'Mon, 06 Jun 2022 12:04:12 GMT', 'Via': '1.1 vegur'}'''
 
 # Desafío XI: consultá 4 sitios diferentes y averiguá para todos ellos qué servidor utilizan, si el contenido se transfiere encriptado, y la fecha de expieración del contenido.
+ml = requests.get('https://www.mercadolibre.com.ar/#from=homecom')
+print(ml.headers)
+'''Expires=Thu, 08 Jun 2023 16:45:58 GMT;'content-encoding': 'gzip;'Server': 'Tengine' '''
+ps = requests.get('https://www.playstation.com/es-ar/')
+print(ps.headers)
+''''Expires': 'Wed, 08 Jun 2022 16:41:12 GMT';'Content-Encoding': 'gzip';'Server': 'Apache' '''
+netflix = requests.get('https://www.netflix.com/ar/login')
+print(netflix.headers) 
+''''Expires=Thu, 8 Jun 2023 16:36:22 GMT;'Content-Encoding': 'gzip';'Server': 'nq_website_nonmember-prod-release 84ee2c12-8b52-4d46-baa4-9378ee9e7b0d' '''
+yt = requests.get('https://www.youtube.com/')
+print(yt.headers)
+''' 'Expires=Mon, 05-Dec-2022 16:28:03 GMT;Content-Encoding': 'gzip';'Server': 'ESF' '''
+
 # Desafío XII: ¿qué código de estado devuelve cuando un recurso es creado? Averigualo
 # Desafío: Nos quedaron prendas con ids que no nos sirven; ¡borralas!
 # Desafío XIII: Creá una venta.
