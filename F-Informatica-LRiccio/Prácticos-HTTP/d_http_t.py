@@ -59,6 +59,8 @@ Cuando accedes a Google estás usando 8.8.8.8. o 8.8.4.4¿?'''
 
 # Desafío X: ¿Qué devolverá la página principal (home) de nuestro sitio? Averiguá el Content-Type de /home
 print(r1.headers)
+'''{'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Expires': '-1', 'Content-Type': 'application/json; 
+charset=utf-8', 'Content-Length': '49', 'Etag': 'W/"31-OlDFK7SS8oUCKcn/LZE2poJFDDo"', 'Vary': 'Accept-Encoding', 'Date': 'Mon, 06 Jun 2022 12:04:12 GMT', 'Via': '1.1 vegur'}'''
 
 # Desafío XI: consultá 4 sitios diferentes y averiguá para todos ellos qué servidor utilizan, si el contenido se transfiere encriptado, y la fecha de expieración del contenido.
 # Desafío XII: ¿qué código de estado devuelve cuando un recurso es creado? Averigualo
