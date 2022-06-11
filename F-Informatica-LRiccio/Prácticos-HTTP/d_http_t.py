@@ -2,43 +2,43 @@
 
 # Apuntes de clase
 import requests 
-pedido = requests.get('https://macowins-server.herokuapp.com/prendas')
-print(pedido) 
+prendas = requests.get('https://macowins-server.herokuapp.com/prendas')
+print(prendas) 
 # Si nos da una respuesta, el canal de comunicación funciona 
-print(pedido.json()) 
+print(prendas.json()) 
 # Json es un diccionario python 
 # Json es el formato en el cual los servidores devuelven la información al cliente 
-print(len(pedido.json()))  
+print(len(prendas.json()))  
 # Averiguamos la cantidad de prendas (recursos) que tiene
-print(pedido.headers) 
+print(prendas.headers) 
 # Headers me dice toda la metadata (la información del pedido)
 
 # Guía teórica de HTTP & REST
 # Desafío I: Hacé otro pedido para traer a la prenda 20. Deberías obtener el siguiente resultado:
-r1 = requests.get('https://macowins-server.herokuapp.com/prendas/20')
-print(r1.json()) 
+r20 = requests.get('https://macowins-server.herokuapp.com/prendas/20')
+print(r20.json()) 
 
 # Desafío II: ¡averigualo! Hacé requests.get('https://macowins-server.herokuapp.com/prendas/400') y observá qué sucede.
 # Quiero ver si tiene 400
-r2 = requests.get('https://macowins-server.herokuapp.com/prendas/400') 
-print(r2)
+r400 = requests.get('https://macowins-server.herokuapp.com/prendas/400') 
+print(r400)
 # Tira error 404 porque no pudo encontrar y traerme el recurso, eso se lo denomina Status Code 
 
 # Desafío III: contrastá con lo que sucede al hacer get de 'https://macowins-server.herokuapp.com/prendas/1' ¿Qué te devuelve el método headers? ¿Qué status_code obtenes?
-r3 = requests.get('https://macowins-server.herokuapp.com/prendas/1')
-print(r3.headers) 
-print(r3.status_code) 
+r1 = requests.get('https://macowins-server.herokuapp.com/prendas/1')
+print(r1.headers) 
+print(r1.status_code) 
 # El Status Code es 200
 
 # Desafío IV: ¿y que sucederá si consultamos a una dirección que no existe, como por ejemplo https://macowins-server.herokuapp.com/prindas/1? ¡Averigualo!
-r4 = requests.get('https://macowins-server.herokuapp.com/prindas/1')
-print(r4) # <Response [404]>
+r1 = requests.get('https://macowins-server.herokuapp.com/prindas/1')
+print(r1) # <Response [404]>
 
 # Desafío V: hacé requests.get('https://macowins-server.herokuapp.com/ventas') y requests.get('https://macowins-server.herokuapp.com/ventas/2)' y contrastá el resultado con tu respuesta anterior
-r5 = requests.get('https://macowins-server.herokuapp.com/ventas')
-r6 = requests.get('https://macowins-server.herokuapp.com/ventas/2')
-print(r5) # <Response [200]>
-print(r6) # <Response [200]>
+ventas = requests.get('https://macowins-server.herokuapp.com/ventas')
+v2 = requests.get('https://macowins-server.herokuapp.com/ventas/2')
+print(v2) # <Response [200]>
+print(v2) # <Response [200]>
 
 # Desafío VI: Obtené las remeras.
 pedido_remeras = requests.get('https://macowins-server.herokuapp.com/prendas?tipo=remera')
@@ -77,6 +77,13 @@ print(yt.headers)
 ''' 'Expires=Mon, 05-Dec-2022 16:28:03 GMT;Content-Encoding': 'gzip';'Server': 'ESF' '''
 
 # Desafío XII: ¿qué código de estado devuelve cuando un recurso es creado? Averigualo
+data = {'id': 21}
+prendas = requests.post('https://macowins-server.herokuapp.com/prendas/', data=data)
+print(prendas.json()) 
+'''
+201
+{'tipo': 'chomba', 'talle': 'XS', 'id': 'xX_hbCG'} '''
+
 # Desafío: Nos quedaron prendas con ids que no nos sirven; ¡borralas!
 # Desafío XIII: Creá una venta.
 # Desafío XIV: Intentá hacer POST sobre una venta concreta, como por ejemplo https://macowins-server.herokuapp.com/prendas/1. ¿Qué sucede?
