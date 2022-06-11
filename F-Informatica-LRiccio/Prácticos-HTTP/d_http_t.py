@@ -77,9 +77,17 @@ print(yt.headers)
 ''' 'Expires=Mon, 05-Dec-2022 16:28:03 GMT;Content-Encoding': 'gzip';'Server': 'ESF' '''
 
 # Desafío XII: ¿qué código de estado devuelve cuando un recurso es creado? Averigualo
+import json, requests
+r = requests.get('https://macowins-server.herokuapp.com/prendas')
 data = {'id': 21}
-prendas = requests.post('https://macowins-server.herokuapp.com/prendas/', data=data)
-print(prendas.json()) 
+r = requests.post('https://macowins-server.herokuapp.com/prendas/', data=data)
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+data =  { "tipo": "chomba", "talle": "XS" }
+r = requests.post('https://macowins-server.herokuapp.com/prendas/', data=json.dumps(data), headers=headers)
+print(r.status_code)
+print(r.json()) 
+#haciendo POST sobre la ruta de /prendas creamos una prenda, sin especificar un id, dado que se generará solo. 
+#de todas formas, si quisieramos podríamos haberlo especificado agregándolo en el cuerpo.
 '''
 201
 {'tipo': 'chomba', 'talle': 'XS', 'id': 'xX_hbCG'} '''
@@ -88,6 +96,7 @@ print(prendas.json())
 # Desafío XIII: Creá una venta.
 # Desafío XIV: Intentá hacer POST sobre una venta concreta, como por ejemplo https://macowins-server.herokuapp.com/prendas/1. ¿Qué sucede?
 # Desafío XV: ¿cuales de los siguientes sitios tiene (o parecen tener, al menos) rutas REST?
+'''Respuestas: Infobae, Pagina12, La Nacion - UNQ, UCEMA - Github'''
 # Desafío XVI: si no se organizan de forma REST, ¿cómo se organizan sus rutas?
 # Desafío XVII: ¿En dónde está desplegado QMP? ¿Podés averiguarlo las cabeceras HTTP y/o la URL?
 

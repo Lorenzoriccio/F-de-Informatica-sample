@@ -9,7 +9,7 @@ import scipy.stats as sspip
 # personas = pd.read_csv(r"C:\Users\ulichtenbaum\Downloads\personas_2011.csv")
 # print(personas.head())
 # # sep --> Sirve para separar los datos segun el caracter que le ponga
-personas = pd.read_csv(r"C:\Users\ulichtenbaum\Downloads\personas_2011.csv", sep=";")
+# personas = pd.read_csv(r"C:\Users\ulichtenbaum\Downloads\personas_2011.csv", sep=";")
 # print(personas.head())
 # # index_col --> Sirve para usar columnas como etiquetas de fila del DataFrame, ya sea como nombre de cadena o índice de columna.
 # # en el siguiente ejemplo, pone a la segunda columna al principio  
