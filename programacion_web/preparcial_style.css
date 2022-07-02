@@ -1,0 +1,26 @@
+body{
+    background-color: black
+}
+.head{
+   padding-left: 20px; 
+   margin-right: 800px; 
+   background-color: lawngreen; 
+   border: dotted; 
+   font-family: 'Open Sans'; 
+   padding-bottom: 10px; 
+   font-size: 10px
+}
+.sucursales{
+    padding-left: 20px; 
+    color: blue;
+    font-family:'Segoe UI'; 
+    background-color: white; 
+    padding-bottom: 5px; 
+    padding-top: 5px; 
+    margin-left: -20px; 
+    padding-right: 10px 
+}
+.enlace{
+    color: lawngreen; 
+    padding-left: 30px
+}
