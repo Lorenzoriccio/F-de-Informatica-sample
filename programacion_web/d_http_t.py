@@ -94,7 +94,10 @@ print(r.json())
 
 # Desafío: Nos quedaron prendas con ids que no nos sirven; ¡borralas!
 # Desafío XIII: Creá una venta.
-# Desafío XIV: Intentá hacer POST sobre una venta concreta, como por ejemplo https://macowins-server.herokuapp.com/prendas/1. ¿Qué sucede?
+# Desafío XIV: Intentá hacer POST sobre una venta concreta, como por ejemplo https://macowins-server.herokuapp.com/prendas/1. ¿Qué sucede? 
+data = {'id':21, 'tipo': 'chomba', 'talle': 'XL'}
+post = requests.post('https://macowins-server.herokuapp.com/prendas/', data=data)  
+print(post.status_code)
 # Desafío XV: ¿cuales de los siguientes sitios tiene (o parecen tener, al menos) rutas REST?
 '''Respuestas: Infobae, Pagina12, La Nacion - UNQ, UCEMA - Github'''
 # Desafío XVI: si no se organizan de forma REST, ¿cómo se organizan sus rutas?
@@ -118,3 +121,12 @@ print(r.json())
 # Desafio V: Buscá qué otros atributos existen y dale estilo al documento HTML creado en el Desafío II
 # Listo
 # Desafío VI: Investigá en la documentación de ipywidgets qué otros elementos HTML podés mostrar y probalos
+
+'''
+Requisitos para el exámen: 
+url: http://miapp.com/...
+http: protocolo
+miapp.com: dominio 
+... : ruta 
+
+'''
