@@ -3,12 +3,17 @@ body{
 }
 .head{
    padding-left: 20px; 
-   margin-right: 800px; 
+   margin-right: 900px; 
    background-color: lawngreen; 
-   border: dotted; 
    font-family: 'Open Sans'; 
-   padding-bottom: 10px; 
-   font-size: 10px
+   font-size: 30px;
+   padding-top: 10px
+}
+.subhead{
+    background-color: lawngreen; 
+    font-family: 'Open Sans'; 
+    font-size: 10px; 
+    padding-bottom: 10px
 }
 .sucursales{
     padding-left: 20px; 
@@ -18,7 +23,8 @@ body{
     padding-bottom: 5px; 
     padding-top: 5px; 
     margin-left: -20px; 
-    padding-right: 10px 
+    padding-right: 10px; 
+    border: dotted 
 }
 .enlace{
     color: lawngreen; 

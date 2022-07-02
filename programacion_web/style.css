@@ -1,5 +1,7 @@
+body{
+    background-color: rgb(221, 146, 146)
+}
 .titulo{
-    margin-left: 20px; 
     border: black 3px dotted;
     background-color: aqua; 
     padding-left: 33px;
@@ -10,9 +12,13 @@
 }
 
 .lista{
-    margin-left: 20px
+    margin-left: 20px; 
+    font-family: 'Open Sans'; 
+    font-size: 15px
 }
 
 .footer{
-    margin-left: 20px
+    margin-left: 20px;
+    font-family: 'Open Sans'; 
+    font-size: 15px
 }
