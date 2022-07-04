@@ -9,4 +9,7 @@ print(prenda5.json()) #{'id': 5, 'tipo': 'pantalon', 'talle': 39}
 
 path = (r'C:\Users\Usuario\Desktop\UNIVERSIDAD\fund_info\F-de-Informatica-sample\programacion_web\prenda5.txt')
 with open(path, 'w') as f: 
-    f.write(str(prenda5))   
+    f.write(str(prenda5))  
+
+requests.delete('https://macowins-server.herokuapp.com/prendas/2') 
+print(requests.get('https://macowins-server.herokuapp.com/prendas').json()) 
