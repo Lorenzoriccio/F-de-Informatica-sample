@@ -2,7 +2,7 @@
 
 # Apuntes de clase
 import requests 
-prendas = requests.get('https://macowins-server.herokuapp.com/prendas')
+prendas = requests.get('https://macowins-server.herokuapp.com/prendas') 
 print(prendas) 
 # Si nos da una respuesta, el canal de comunicación funciona 
 print(prendas.json()) 
